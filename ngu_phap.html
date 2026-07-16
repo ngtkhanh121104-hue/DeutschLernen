@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ngữ Pháp Tiếng Đức A1</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <header class="site-header" id="top">
         <div class="header-inner">
+            <button
+                class="sidebar-toggle"
+                type="button"
+                aria-label="Mở mục lục"
+                aria-controls="page-sidebar"
+                aria-expanded="false"
+            >
+                <span class="sidebar-toggle-icon" aria-hidden="true"><span></span></span>
+                <span class="sidebar-toggle-text">Mục lục</span>
+            </button>
             <a href="index.html" class="logo"><span class="flag">🇩🇪</span> Deutsch A1</a>
             <nav class="site-nav">
                 <a href="mau_cau.html" class="nav-link">Mẫu câu giao tiếp</a>
@@ -24,17 +34,20 @@
 
     <div class="shell">
 
-        <aside class="sidebar">
+        <aside
+            class="sidebar"
+            id="page-sidebar"
+            aria-label="Mục lục trang"
+            aria-hidden="true"
+        >
+            <button
+                class="sidebar-close"
+                type="button"
+                aria-label="Đóng mục lục"
+            >×</button>
             <details class="sidebar-panel" open>
                 <summary class="sidebar-title">Danh mục ngữ pháp</summary>
-                <nav class="sidebar-nav">
-                    <a href="#personal-pronouns">👤 Đại từ nhân xưng</a>
-                    <a href="#sentence-structures">🗣️ Cấu trúc câu hỏi &amp; trả lời</a>
-                    <a href="#possessive-articles">💍 Mạo từ sở hữu</a>
-                    <a href="#negation">❌ Cấu trúc phủ định</a>
-                    <a href="#time-expressions">🕒 Wann?</a>
-                    <a href="#verb-position">📍 Vị trí động từ trong câu</a>
-                </nav>
+                <nav class="sidebar-nav" id="auto-sidebar"></nav>
             </details>
         </aside>
 
@@ -432,38 +445,19 @@
         </main>
     </div>
 
+    <button
+        class="sidebar-overlay"
+        type="button"
+        aria-label="Đóng mục lục"
+        tabindex="-1"
+    ></button>
+
     <a href="#top" class="to-top" aria-label="Về đầu trang">↑</a>
 
     <footer class="site-footer">
         <p>© 2026 Học Tiếng Đức A1 Miễn Phí. Viel Erfolg!</p>
     </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const topBtn = document.querySelector(".to-top");
-
-            if (!topBtn) return;
-
-            function toggleButton() {
-                if (window.scrollY > 300) {
-                    topBtn.classList.add("show");
-                } else {
-                    topBtn.classList.remove("show");
-                }
-            }
-
-            window.addEventListener("scroll", toggleButton);
-
-            topBtn.addEventListener("click", function (e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            });
-
-            toggleButton();
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

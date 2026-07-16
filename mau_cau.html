@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mẫu Câu Giao Tiếp A1</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <header class="site-header" id="top">
         <div class="header-inner">
+            <button
+                class="sidebar-toggle"
+                type="button"
+                aria-label="Mở mục lục"
+                aria-controls="page-sidebar"
+                aria-expanded="false"
+            >
+                <span class="sidebar-toggle-icon" aria-hidden="true"><span></span></span>
+                <span class="sidebar-toggle-text">Mục lục</span>
+            </button>
             <a href="index.html" class="logo"><span class="flag">🇩🇪</span> Deutsch A1</a>
             <nav class="site-nav">
                 <a href="mau_cau.html" class="nav-link active">Mẫu câu giao tiếp</a>
@@ -24,23 +34,20 @@
 
     <div class="shell">
 
-        <aside class="sidebar">
+        <aside
+            class="sidebar"
+            id="page-sidebar"
+            aria-label="Mục lục trang"
+            aria-hidden="true"
+        >
+            <button
+                class="sidebar-close"
+                type="button"
+                aria-label="Đóng mục lục"
+            >×</button>
             <details class="sidebar-panel" open>
                 <summary class="sidebar-title">Mục lục nội dung</summary>
-                <nav class="sidebar-nav">
-                    <a href="#section-1">1. Hỏi tên &amp; Giới thiệu</a>
-                    <a href="#section-2">2. Đánh vần &amp; Nhắc lại</a>
-                    <a href="#section-3">3. Hỏi nguồn gốc</a>
-                    <a href="#section-4">4. Hỏi nơi ở</a>
-                    <a href="#section-5">5. Sức khỏe &amp; Dự đoán</a>
-                    <a href="#section-6">6. Khả năng Ngôn ngữ</a>
-                    <a href="#section-7">7. Tuổi &amp; Đời tư</a>
-                    <a href="#section-8">8. Hỏi về gia đình</a>
-                    <a href="#section-9">9. Vị trí &amp; Đồ vật</a>
-                    <a href="#section-10">10. Hỏi nghề nghiệp</a>
-                    <a href="#section-11">11. Hỏi giá cả</a>
-                    <a href="#section-12">12. Hỏi giờ</a>
-                </nav>
+                <nav class="sidebar-nav" id="auto-sidebar"></nav>
             </details>
         </aside>
 
@@ -462,7 +469,7 @@
                     <div class="qa-item">
                         <div class="qa-row frage">
                             <span class="qa-tag frage">Frage</span>
-                            <p class="qa-text">Wie kostet das Buch?</p>
+                            <p class="qa-text">Wie viel kostet das Buch?</p>
                         </div>
                         <p class="qa-translit ">(Cuốn sách này giá bao nhiêu?)</p>
 
@@ -574,38 +581,19 @@
         </main>
     </div>
 
+    <button
+        class="sidebar-overlay"
+        type="button"
+        aria-label="Đóng mục lục"
+        tabindex="-1"
+    ></button>
+
     <a href="#top" class="to-top" aria-label="Về đầu trang">↑</a>
 
     <footer class="site-footer">
         <p>© 2026 Học Tiếng Đức A1 Miễn Phí. Viel Erfolg!</p>
     </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const topBtn = document.querySelector(".to-top");
-
-            if (!topBtn) return;
-
-            function toggleButton() {
-                if (window.scrollY > 300) {
-                    topBtn.classList.add("show");
-                } else {
-                    topBtn.classList.remove("show");
-                }
-            }
-
-            window.addEventListener("scroll", toggleButton);
-
-            topBtn.addEventListener("click", function (e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            });
-
-            toggleButton();
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
