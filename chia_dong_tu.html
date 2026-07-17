@@ -12,13 +12,8 @@
 
     <header class="site-header" id="top">
         <div class="header-inner">
-            <button
-                class="sidebar-toggle"
-                type="button"
-                aria-label="Mở mục lục"
-                aria-controls="page-sidebar"
-                aria-expanded="false"
-            >
+            <button class="sidebar-toggle" type="button" aria-label="Mở mục lục" aria-controls="page-sidebar"
+                aria-expanded="false">
                 <span class="sidebar-toggle-icon" aria-hidden="true"><span></span></span>
                 <span class="sidebar-toggle-text">Mục lục</span>
             </button>
@@ -34,17 +29,8 @@
 
     <div class="shell">
 
-        <aside
-            class="sidebar"
-            id="page-sidebar"
-            aria-label="Mục lục trang"
-            aria-hidden="true"
-        >
-            <button
-                class="sidebar-close"
-                type="button"
-                aria-label="Đóng mục lục"
-            >×</button>
+        <aside class="sidebar" id="page-sidebar" aria-label="Mục lục trang" aria-hidden="true">
+            <button class="sidebar-close" type="button" aria-label="Đóng mục lục">×</button>
             <details class="sidebar-panel" open>
                 <summary class="sidebar-title">Phân loại động từ</summary>
                 <nav class="sidebar-nav" id="auto-sidebar"></nav>
@@ -75,10 +61,12 @@
                                 <th>Ngôi / Đại từ</th>
                                 <th>arbeiten <span class="sub">(làm việc)</span></th>
                                 <th>heißen <span class="sub">(tên là)</span></th>
+                                <th>kochen <span class="sub">(nấu ăn)</span></th>
                                 <th>kommen <span class="sub">(đến từ)</span></th>
                                 <th>leben <span class="sub">(sinh sống)</span></th>
                                 <th>machen <span class="sub">(làm)</span></th>
                                 <th>spielen <span class="sub">(chơi)</span></th>
+                                <th>suchen <span class="sub">(tìm kiếm)</span></th>
                                 <th>trinken <span class="sub">(uống)</span></th>
                                 <th>wohnen <span class="sub">(sống, trú ngụ)</span></th>
                             </tr>
@@ -88,10 +76,12 @@
                                 <td class="rowhead">ich</td>
                                 <td>arbeit<span class="ending">e</span></td>
                                 <td>heiß<span class="ending">e</span></td>
+                                <td>koch<span class="ending">e</span></td>
                                 <td>komm<span class="ending">e</span></td>
                                 <td>leb<span class="ending">e</span></td>
                                 <td>mach<span class="ending">e</span></td>
                                 <td>spiel<span class="ending">e</span></td>
+                                <td>such<span class="ending">e</span></td>
                                 <td>trink<span class="ending">e</span></td>
                                 <td>wohn<span class="ending">e</span></td>
                             </tr>
@@ -100,10 +90,12 @@
                                 <td class="rowhead">du</td>
                                 <td>arbeit<span class="ending">est</span></td>
                                 <td>heiß<span class="ending">t</span></td>
+                                <td>koch<span class="ending">st</span></td>
                                 <td>komm<span class="ending">st</span></td>
                                 <td>leb<span class="ending">st</span></td>
                                 <td>mach<span class="ending">st</span></td>
                                 <td>spiel<span class="ending">st</span></td>
+                                <td>such<span class="ending">st</span></td>
                                 <td>trink<span class="ending">st</span></td>
                                 <td>wohn<span class="ending">st</span></td>
                             </tr>
@@ -112,10 +104,12 @@
                                 <td class="rowhead">er / es / sie</td>
                                 <td>arbeit<span class="ending">et</span></td>
                                 <td>heiß<span class="ending">t</span></td>
+                                <td>koch<span class="ending">t</span></td>
                                 <td>komm<span class="ending">t</span></td>
                                 <td>leb<span class="ending">t</span></td>
                                 <td>mach<span class="ending">t</span></td>
                                 <td>spiel<span class="ending">t</span></td>
+                                <td>such<span class="ending">t</span></td>
                                 <td>trink<span class="ending">t</span></td>
                                 <td>wohn<span class="ending">t</span></td>
                             </tr>
@@ -124,10 +118,12 @@
                                 <td class="rowhead">ihr</td>
                                 <td>arbeit<span class="ending">et</span></td>
                                 <td>heiß<span class="ending">t</span></td>
+                                <td>koch<span class="ending">t</span></td>
                                 <td>komm<span class="ending">t</span></td>
                                 <td>leb<span class="ending">t</span></td>
                                 <td>mach<span class="ending">t</span></td>
                                 <td>spiel<span class="ending">t</span></td>
+                                <td>such<span class="ending">t</span></td>
                                 <td>trink<span class="ending">t</span></td>
                                 <td>wohn<span class="ending">t</span></td>
                             </tr>
@@ -136,10 +132,12 @@
                                 <td class="rowhead">sie(Pl) / Sie / Wir</td>
                                 <td>arbeiten</td>
                                 <td>heißen</td>
+                                <td>kochen</td>
                                 <td>kommen</td>
                                 <td>leben</td>
                                 <td>machen</td>
                                 <td>spielen</td>
+                                <td>suchen</td>
                                 <td>trinken</td>
                                 <td>wohnen</td>
                             </tr>
@@ -162,39 +160,126 @@
                         <thead>
                             <tr>
                                 <th>Ngôi / Đại từ</th>
-                                <th>haben <span class="sub">(có)</span></th>
-                                <th>sein <span class="sub">(thì, là, ở)</span></th>
-                                <th>sprechen <span class="sub">(nói - đổi e -> i)</span></th>
+
+                                <th>
+                                    essen <span class="sub">(ăn)</span>
+                                </th>
+
+                                <th>
+                                    haben <span class="sub">(có)</span>
+                                </th>
+
+                                <th>
+                                    möchten <span class="sub">(muốn, cách nói lịch sự)</span>
+                                </th>
+
+                                <th>
+                                    mögen <span class="sub">(thích)</span>
+                                </th>
+
+                                <th>
+                                    nehmen <span class="sub">(lấy)</span>
+                                </th>
+
+                                <th>
+                                    sein <span class="sub">(thì, là, ở)</span>
+                                </th>
+
+                                <th>
+                                    sprechen <span class="sub">(nói)</span>
+                                </th>
                             </tr>
                         </thead>
+
                         <tbody>
                             <tr>
                                 <td class="rowhead">ich</td>
+
+                                <td>ess<span class="ending">e</span></td>
                                 <td>habe</td>
+                                <td>möchte</td>
+                                <td class="ending">mag</td>
+                                <td>nehm<span class="ending">e</span></td>
                                 <td class="ending">bin</td>
                                 <td>sprech<span class="ending">e</span></td>
                             </tr>
-                            <tr class="flag-row">
-                                <td class="rowhead">du ⚠️</td>
-                                <td class="ending">hast <span class="qa-note">(bỏ b)</span></td>
+
+                            <tr>
+                                <td class="rowhead">du</td>
+
+                                <td>
+                                    <span class="ending">isst</span>
+                                    <span class="qa-note">(e → i)</span>
+                                </td>
+
+                                <td class="ending">
+                                    hast
+                                    <span class="qa-note">(bỏ b)</span>
+                                </td>
+
+                                <td>möcht<span class="ending">est</span></td>
+                                <td class="ending">magst</td>
+
+                                <td>
+                                    n<span class="ending-alt">i</span>mmst
+                                    <span class="qa-note">(e → i, hm → mm)</span>
+                                </td>
+
                                 <td class="ending">bist</td>
-                                <td>spr<span class="ending-alt">i</span>chst</td>
+
+                                <td>
+                                    spr<span class="ending-alt">i</span>chst
+                                </td>
                             </tr>
-                            <tr class="flag-row">
-                                <td class="rowhead">er / es / sie ⚠️</td>
-                                <td class="ending">hat <span class="qa-note">(bỏ b)</span></td>
+
+                            <tr>
+                                <td class="rowhead">er / es / sie</td>
+
+                                <td>
+                                    <span class="ending">isst</span>
+                                    <span class="qa-note">(e → i)</span>
+                                </td>
+
+                                <td class="ending">
+                                    hat
+                                    <span class="qa-note">(bỏ b)</span>
+                                </td>
+
+                                <td>möcht<span class="ending">e</span></td>
+                                <td class="ending">mag</td>
+
+                                <td>
+                                    n<span class="ending-alt">i</span>mmt
+                                    <span class="qa-note">(e → i, hm → mm)</span>
+                                </td>
+
                                 <td class="ending">ist</td>
-                                <td>spr<span class="ending-alt">i</span>cht</td>
+
+                                <td>
+                                    spr<span class="ending-alt">i</span>cht
+                                </td>
                             </tr>
+
                             <tr>
                                 <td class="rowhead">ihr</td>
+
+                                <td>ess<span class="ending">t</span></td>
                                 <td>habt</td>
+                                <td>möcht<span class="ending">et</span></td>
+                                <td>mögt</td>
+                                <td>nehm<span class="ending">t</span></td>
                                 <td class="ending">seid</td>
                                 <td>sprech<span class="ending">t</span></td>
                             </tr>
+
                             <tr>
-                                <td class="rowhead">sie(Pl) / Sie / Wir</td>
+                                <td class="rowhead">sie (Pl.) / Sie / wir</td>
+
+                                <td>essen</td>
                                 <td>haben</td>
+                                <td>möchten</td>
+                                <td>mögen</td>
+                                <td>nehmen</td>
                                 <td class="ending">sind</td>
                                 <td>sprechen</td>
                             </tr>
@@ -206,12 +291,7 @@
         </main>
     </div>
 
-    <button
-        class="sidebar-overlay"
-        type="button"
-        aria-label="Đóng mục lục"
-        tabindex="-1"
-    ></button>
+    <button class="sidebar-overlay" type="button" aria-label="Đóng mục lục" tabindex="-1"></button>
 
     <a href="#top" class="to-top" aria-label="Về đầu trang">↑</a>
 

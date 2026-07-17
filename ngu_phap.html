@@ -12,13 +12,8 @@
 
     <header class="site-header" id="top">
         <div class="header-inner">
-            <button
-                class="sidebar-toggle"
-                type="button"
-                aria-label="Mở mục lục"
-                aria-controls="page-sidebar"
-                aria-expanded="false"
-            >
+            <button class="sidebar-toggle" type="button" aria-label="Mở mục lục" aria-controls="page-sidebar"
+                aria-expanded="false">
                 <span class="sidebar-toggle-icon" aria-hidden="true"><span></span></span>
                 <span class="sidebar-toggle-text">Mục lục</span>
             </button>
@@ -34,17 +29,8 @@
 
     <div class="shell">
 
-        <aside
-            class="sidebar"
-            id="page-sidebar"
-            aria-label="Mục lục trang"
-            aria-hidden="true"
-        >
-            <button
-                class="sidebar-close"
-                type="button"
-                aria-label="Đóng mục lục"
-            >×</button>
+        <aside class="sidebar" id="page-sidebar" aria-label="Mục lục trang" aria-hidden="true">
+            <button class="sidebar-close" type="button" aria-label="Đóng mục lục">×</button>
             <details class="sidebar-panel" open>
                 <summary class="sidebar-title">Danh mục ngữ pháp</summary>
                 <nav class="sidebar-nav" id="auto-sidebar"></nav>
@@ -97,8 +83,8 @@
                                 <td style="font-weight:700; color:var(--navy-soft);">er / es / sie</td>
                                 <td>Anh ấy / Nó / Cô ấy (người hoặc vật được nói tới)</td>
                             </tr>
-                            <tr class="flag-row">
-                                <td class="ending">Sie ⚠️</td>
+                            <tr>
+                                <td class="ending">Sie </td>
                                 <td>Ngài / Các ngài <span class="qa-note">(Trang trọng, lịch sự - luôn viết hoa chữ
                                         S)</span></td>
                             </tr>
@@ -264,6 +250,7 @@
                     </div>
                 </div>
                 <p style="color:var(--ink-soft); margin-bottom:16px;">Các cách diễn đạt thời gian cơ bản.</p>
+                <img src="images/zeit.png" alt="Banner" class="responsive-img">
                 <div class="table-wrap">
                     <table class="data-table">
                         <thead>
@@ -393,7 +380,8 @@
                                 <td rowspan="3">
                                     suchen<br>
                                     haben<br>
-                                    brauchen
+                                    brauchen<br>
+                                    möchten
                                 </td>
                                 <td><span class="ending">den</span></td>
                                 <td><span class="ending">einen</span></td>
@@ -438,19 +426,150 @@
                     <strong>Ví dụ:</strong><br><br>
 
                     • Ich suche <strong>den Schlüssel</strong>.<br>
-                    • Ich habe <strong>ein Buch</strong>.<br>
-                    • Ich brauche <strong>keine Uhr</strong>.
+                    • Ich habe <strong>einen Bruder</strong>.<br>
+                    • Ich brauche <strong>keine Uhr</strong>.<br>
+                    • Ich möchten <strong>einen Kaffee</strong>.
+                </div>
+            </section>
+            <section id="plural-nouns" class="section-card">
+                <div class="section-head">
+                    <div class="stamp-mark">08</div>
+
+                    <div class="section-titles">
+                        <span class="section-title-de">
+                            🧺 Nomen und Artikel: Plural
+                        </span>
+
+                        <span class="section-title-vi">
+                            Danh từ và mạo từ ở số nhiều
+                        </span>
+                    </div>
+                </div>
+
+                <p class="section-description">
+                    Trong tiếng Đức, danh từ số nhiều không có một công thức duy nhất.
+                    Tùy từng danh từ, ta có thể giữ nguyên, thêm đuôi hoặc đổi nguyên âm.
+                    Mạo từ xác định ở số nhiều luôn là <strong>die</strong>.
+                </p>
+
+                <p class="swipe-hint">↔ Vuốt ngang để xem đủ bảng</p>
+
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Cách tạo số nhiều</th>
+                                <th>Singular</th>
+                                <th>Plural</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="rowhead"> - (Không đổi)</td>
+                                <td>das Brötchen</td>
+                                <td>
+                                    die Brötchen
+                                </td>
+                            </tr>
+
+                            <tr class="flag-row">
+                                <td class="rowhead"> &uml; (Đổi nguyên âm)</td>
+                                <td>der Apfel</td>
+                                <td>
+                                    die <span class="ending">Ä</span>pfel
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="rowhead">-e</td>
+                                <td>das Brot</td>
+                                <td>
+                                    die Brot<span class="ending">e</span>
+                                </td>
+                            </tr>
+
+                            <tr class="flag-row">
+                                <td class="rowhead">¨ + -e</td>
+                                <td>der Baum</td>
+                                <td>
+                                    die B<span class="ending">ä</span>um<span class="ending">e</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="rowhead">-er</td>
+                                <td>das Ei</td>
+                                <td>
+                                    die Ei<span class="ending">er</span>
+                                </td>
+                            </tr>
+
+                            <tr class="flag-row">
+                                <td class="rowhead">¨ + -er</td>
+                                <td>das Buch</td>
+                                <td>
+                                    die B<span class="ending">ü</span>ch<span class="ending">er</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="rowhead">-n</td>
+                                <td>die Birne</td>
+                                <td>
+                                    die Birne<span class="ending">n</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="rowhead">-en</td>
+                                <td>die Uhr</td>
+                                <td>
+                                    die Uhr<span class="ending">en</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="rowhead">-s</td>
+                                <td>das Croissant</td>
+                                <td>
+                                    die Croissant<span class="ending">s</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note-box" style="margin-top:16px;">
+                    <strong>💡 Quy tắc cần nhớ</strong><br><br>
+
+                    • Mạo từ xác định số nhiều luôn là
+                    <strong>die</strong>.<br><br>
+
+                    • Danh từ số nhiều có thể:
+                    giữ nguyên, thêm <strong>-e</strong>,
+                    <strong>-er</strong>, <strong>-n</strong>,
+                    <strong>-en</strong> hoặc <strong>-s</strong>.<br><br>
+
+                    • Một số danh từ còn đổi nguyên âm:
+                    <strong>a → ä</strong>,
+                    <strong>o → ö</strong>,
+                    <strong>u → ü</strong>.
+                </div>
+
+                <div class="mini-quote">
+                    <strong>Ví dụ:</strong><br><br>
+
+                    • Das ist ein Apfel. → Das sind zwei Äpfel.<br>
+                    • Ich kaufe ein Brot. → Ich kaufe drei Brote.<br>
+                    • Das ist eine Birne. → Das sind viele Birnen.<br>
+                    • Ich habe ein Buch. → Ich habe zwei Bücher.
                 </div>
             </section>
         </main>
     </div>
 
-    <button
-        class="sidebar-overlay"
-        type="button"
-        aria-label="Đóng mục lục"
-        tabindex="-1"
-    ></button>
+    <button class="sidebar-overlay" type="button" aria-label="Đóng mục lục" tabindex="-1"></button>
 
     <a href="#top" class="to-top" aria-label="Về đầu trang">↑</a>
 

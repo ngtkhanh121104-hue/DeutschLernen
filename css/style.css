@@ -654,14 +654,8 @@ table.data-table {
   background: var(--paper-raised);
 }
 
-table.data-table thead th:first-child {
-  position: sticky;
-  left: 0;
-  z-index: 20;
-  background: var(--navy);
-}
-
-table.data-table tbody td:first-child {
+/* Chỉ cố định những ô thực sự thuộc cột đầu tiên */
+table.data-table tbody td.rowhead {
   position: sticky;
   left: 0;
   z-index: 10;
@@ -669,18 +663,19 @@ table.data-table tbody td:first-child {
   box-shadow: 3px 0 8px rgba(0, 0, 0, .08);
 }
 
-table.data-table tbody tr:hover td:first-child {
+/* Màu khi rê chuột */
+table.data-table tbody tr:hover td.rowhead {
   background: #EBD8D6;
 }
 
-table.data-table tr.flag-row td:first-child {
+/* Màu của hàng cảnh báo */
+table.data-table tr.flag-row td.rowhead {
   background: var(--gold-soft);
 }
 
-table.data-table tr.flag-row:hover td:first-child {
+table.data-table tr.flag-row:hover td.rowhead {
   background: #EFE2BC;
 }
-
 table.data-table thead tr {
   background: var(--navy);
 }
@@ -1390,4 +1385,12 @@ table.data-table tr.flag-row:hover td {
     padding-inline: 12px;
     margin-right: 6px;
   }
+}
+.responsive-img {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 12px;
 }
