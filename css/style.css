@@ -1394,3 +1394,471 @@ table.data-table tr.flag-row:hover td {
     margin: 20px auto;
     border-radius: 12px;
 }
+
+/* =========================================================
+   Sổ tay từ vựng — so_tay_tu_vung.html
+   Tất cả selector được giới hạn trong .vocab-page để không
+   ảnh hưởng đến các trang mẫu câu, ngữ pháp và chia động từ.
+   ========================================================= */
+
+.vocab-page button {
+  font: inherit;
+}
+
+.vocab-page .page-header {
+  width: min(1080px, calc(100% - 32px));
+  margin: 34px auto 24px;
+  padding: 34px 38px;
+  text-align: left;
+  border: 1px solid var(--line-strong);
+  border-left: 5px solid var(--stamp-red);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 10px 28px rgba(27, 42, 50, .08);
+}
+
+.vocab-page .eyebrow {
+  margin: 0 0 9px;
+  color: var(--stamp-red);
+  font-family: var(--f-mono);
+  font-size: .73rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.vocab-page .page-header h1 {
+  margin: 0;
+  color: var(--navy);
+  font-family: var(--f-display);
+  font-size: clamp(2.15rem, 5vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+}
+
+.vocab-page .subtitle {
+  max-width: 760px;
+  margin: 12px 0 0;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.vocab-page .lesson-list {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto 54px;
+}
+
+.vocab-page .lesson-card {
+  position: relative;
+  min-width: 0;
+  min-height: 220px;
+  padding: 25px 24px 22px 29px;
+  overflow: hidden;
+  color: var(--ink);
+  text-align: left;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background:
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(27, 42, 50, .035) 32px),
+    var(--paper-raised);
+  box-shadow: 0 5px 16px rgba(27, 42, 50, .07);
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.vocab-page .lesson-card::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  left: 16px;
+  width: 3px;
+  background: var(--stamp-red);
+  opacity: .82;
+}
+
+.vocab-page .lesson-card::after {
+  content: "WORTSCHATZ";
+  position: absolute;
+  top: 18px;
+  right: -27px;
+  padding: 4px 31px;
+  color: rgba(27, 42, 50, .43);
+  font-family: var(--f-mono);
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  border: 1px solid rgba(27, 42, 50, .18);
+  transform: rotate(38deg);
+}
+
+.vocab-page .lesson-card:hover,
+.vocab-page .lesson-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--ink-faint);
+  box-shadow: 0 12px 28px rgba(27, 42, 50, .14);
+  outline: none;
+}
+
+.vocab-page .lesson-date {
+  display: inline-block;
+  margin: 0;
+  padding: 5px 9px;
+  color: var(--stamp-red-ink);
+  font-family: var(--f-mono);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  border: 1px solid rgba(171, 43, 33, .35);
+  background: var(--stamp-red-soft);
+}
+
+.vocab-page .lesson-title {
+  margin: 20px 0 8px;
+  color: var(--navy);
+  font-family: var(--f-display);
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+}
+
+.vocab-page .lesson-note {
+  min-height: 48px;
+  margin: 0 0 20px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.vocab-page .lesson-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  padding-top: 14px;
+  color: var(--ink-soft);
+  font-family: var(--f-mono);
+  font-size: .76rem;
+  border-top: 1px dashed var(--line-strong);
+}
+
+.vocab-page .open-label {
+  color: var(--stamp-red);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.vocab-page .vocab-modal {
+  width: min(1050px, calc(100% - 28px));
+  max-width: none;
+  max-height: min(90vh, 920px);
+  padding: 0;
+  overflow: hidden;
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--paper-raised);
+  box-shadow: 0 28px 85px rgba(8, 22, 36, .4);
+}
+
+.vocab-page .vocab-modal::backdrop {
+  background: rgba(10, 24, 38, .72);
+  backdrop-filter: blur(2px);
+}
+
+.vocab-page .modal-shell {
+  display: flex;
+  flex-direction: column;
+  max-height: min(90vh, 920px);
+}
+
+.vocab-page .modal-header {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 23px 27px 20px 31px;
+  color: #fff;
+  border-bottom: 5px solid var(--gold);
+  background: var(--navy);
+}
+
+.vocab-page .modal-header::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: var(--stamp-red);
+}
+
+.vocab-page .modal-date {
+  margin: 0 0 5px;
+  color: #e6c969;
+  font-family: var(--f-mono);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.vocab-page .modal-title {
+  margin: 0;
+  color: #fff;
+  font-family: var(--f-display);
+  font-size: clamp(1.55rem, 4vw, 2.15rem);
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.vocab-page .close-modal {
+  display: grid;
+  flex: 0 0 40px;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: #fff;
+  font-size: 1.65rem;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, .08);
+  cursor: pointer;
+}
+
+.vocab-page .close-modal:hover,
+.vocab-page .close-modal:focus-visible {
+  color: var(--navy);
+  background: #fff;
+  outline: none;
+}
+
+.vocab-page .modal-content {
+  padding: 28px 30px 36px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background:
+    linear-gradient(rgba(27, 42, 50, .025) 1px, transparent 1px),
+    var(--paper-raised);
+  background-size: 100% 32px;
+}
+
+.vocab-page .word-section + .word-section {
+  margin-top: 34px;
+}
+
+.vocab-page .section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  color: var(--navy);
+  font-family: var(--f-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+.vocab-page .section-heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line-strong);
+}
+
+.vocab-page .noun-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.vocab-page .gender-column {
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.vocab-page .gender-title {
+  margin: 0;
+  padding: 11px 14px;
+  color: var(--navy);
+  font-family: var(--f-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--line);
+  text-transform: uppercase;
+}
+
+.vocab-page .gender-column.der .gender-title {
+  border-top: 4px solid #487ca7;
+  background: #edf4fa;
+}
+
+.vocab-page .gender-column.die .gender-title {
+  border-top: 4px solid var(--stamp-red);
+  background: var(--stamp-red-soft);
+}
+
+.vocab-page .gender-column.das .gender-title {
+  border-top: 4px solid var(--stamp-green);
+  background: var(--stamp-green-soft);
+}
+
+.vocab-page .word-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 12px;
+  list-style: none;
+}
+
+.vocab-page .word-item {
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, .9);
+}
+
+.vocab-page .german-word,
+.vocab-page .word-meaning,
+.vocab-page .word-extra {
+  display: block;
+}
+
+.vocab-page .german-word {
+  margin-bottom: 4px;
+  color: var(--navy);
+  font-weight: 800;
+}
+
+.vocab-page .word-meaning {
+  color: var(--ink-soft);
+  font-size: .9rem;
+  line-height: 1.45;
+}
+
+.vocab-page .word-extra {
+  margin-top: 5px;
+  color: var(--stamp-green);
+  font-family: var(--f-mono);
+  font-size: .72rem;
+}
+
+.vocab-page .empty-text {
+  margin: 12px;
+  padding: 10px;
+  color: var(--ink-faint);
+  font-size: .88rem;
+  font-style: italic;
+}
+
+.vocab-page .simple-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.vocab-page .word-table {
+  width: 100%;
+  min-width: 610px;
+  border-collapse: collapse;
+}
+
+.vocab-page .word-table th,
+.vocab-page .word-table td {
+  padding: 13px 15px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.vocab-page .word-table th {
+  color: #fff;
+  font-family: var(--f-mono);
+  font-size: .72rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  background: var(--navy-soft);
+}
+
+.vocab-page .word-table tbody tr:nth-child(even) {
+  background: #f7f7f2;
+}
+
+.vocab-page .word-table tbody tr:hover {
+  background: var(--gold-soft);
+}
+
+.vocab-page .word-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .vocab-page .lesson-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .vocab-page .page-header {
+    margin-top: 22px;
+    padding: 25px 22px;
+  }
+
+  .vocab-page .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .vocab-page .lesson-list {
+    grid-template-columns: 1fr;
+  }
+
+  .vocab-page .lesson-card {
+    min-height: 205px;
+  }
+
+  .vocab-page .vocab-modal {
+    width: 100%;
+    max-height: 94vh;
+    margin: auto 0 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .vocab-page .modal-shell {
+    max-height: 94vh;
+  }
+
+  .vocab-page .modal-header {
+    padding: 19px 17px 17px 21px;
+  }
+
+  .vocab-page .modal-content {
+    padding: 22px 16px 30px;
+  }
+
+  .vocab-page .noun-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .vocab-page .word-section + .word-section {
+    margin-top: 28px;
+  }
+}
