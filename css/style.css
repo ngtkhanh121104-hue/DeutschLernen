@@ -679,7 +679,14 @@ table.data-table tr.flag-row:hover td.rowhead {
 table.data-table thead tr {
   background: var(--navy);
 }
-
+table.data-table thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 30;
+  background: var(--navy);
+  background-clip: padding-box;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, .18);
+}
 table.data-table th {
   color: #fff;
   font-family: var(--f-mono);

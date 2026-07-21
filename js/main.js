@@ -2,7 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
     initBackToTop();
     initAutoSidebar();
     initSidebarDrawer();
-    initActiveSidebarLink();
+
+    if (typeof initActiveSidebarLink === "function") {
+        initActiveSidebarLink();
+    }
+
+    initVocabularyPage();
 });
 
 /**
@@ -196,4 +201,323 @@ function initResponsiveSidebar() {
 
         sidebarPanel.open = false;
     });
+}
+/**
+ * Khởi tạo trang sổ tay từ vựng.
+ * Hàm sẽ tự dừng nếu trang hiện tại không phải trang từ vựng.
+ */
+function initVocabularyPage() {
+    console.log("Dữ liệu từ vựng:", window.lessonData);
+    const lessonList = document.getElementById("lessonList");
+    const modal = document.getElementById("vocabModal");
+    const modalDate = document.getElementById("modalDate");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalContent = document.getElementById("modalContent");
+    const closeModalButton = document.getElementById("closeModal");
+
+    const lessons = window.lessonData;
+
+    if (
+        !lessonList ||
+        !modal ||
+        !modalDate ||
+        !modalTitle ||
+        !modalContent ||
+        !closeModalButton ||
+        !Array.isArray(lessons)
+    ) {
+        return;
+    }
+
+    /**
+     * Đếm tổng số từ trong một buổi học.
+     */
+    function getWordCount(lesson) {
+        const nounCount = Object.values(lesson.nouns)
+            .reduce((total, words) => {
+                return total + words.length;
+            }, 0);
+
+        return (
+            nounCount +
+            lesson.verbs.length +
+            lesson.adjectives.length +
+            lesson.others.length
+        );
+    }
+
+    /**
+     * Hiển thị các buổi học bên ngoài trang.
+     */
+    function renderLessonCards() {
+        lessonList.innerHTML = lessons.map(lesson => `
+            <button
+                class="lesson-card"
+                type="button"
+                data-lesson-id="${lesson.id}"
+                aria-label="Mở từ vựng ngày ${lesson.date}: ${lesson.title}"
+            >
+                <time
+                    class="lesson-date"
+                    datetime="${lesson.id}"
+                >
+                    ${lesson.date}
+                </time>
+
+                <h2 class="lesson-title">
+                    ${lesson.title}
+                </h2>
+
+                <p class="lesson-note">
+                    ${lesson.note}
+                </p>
+
+                <span class="lesson-meta">
+                    <span>
+                        ${getWordCount(lesson)} từ đã ghi
+                    </span>
+
+                    <span class="open-label">
+                        Mở sổ →
+                    </span>
+                </span>
+            </button>
+        `).join("");
+    }
+
+    /**
+     * Hiển thị danh sách danh từ trong từng cột.
+     */
+    function renderWordItems(words) {
+        if (!words.length) {
+            return `
+                <p class="empty-text">
+                    Chưa ghi từ nào.
+                </p>
+            `;
+        }
+
+        return `
+            <ul class="word-list">
+                ${words.map(item => `
+                    <li class="word-item">
+                        <span class="german-word">
+                            ${item.word}
+                        </span>
+
+                        <span class="word-meaning">
+                            ${item.meaning}
+                        </span>
+
+                        ${
+                            item.extra
+                                ? `
+                                    <span class="word-extra">
+                                        ${item.extra}
+                                    </span>
+                                `
+                                : ""
+                        }
+                    </li>
+                `).join("")}
+            </ul>
+        `;
+    }
+
+    /**
+     * Hiển thị danh từ theo der, die và das.
+     */
+    function renderNouns(nouns) {
+        return `
+            <section class="word-section">
+                <h3 class="section-heading">
+                    Danh từ (Nomen)
+                </h3>
+
+                <div class="noun-columns">
+                    <div class="gender-column der">
+                        <h4 class="gender-title">
+                            der · Giống đực
+                        </h4>
+
+                        ${renderWordItems(nouns.der)}
+                    </div>
+
+                    <div class="gender-column die">
+                        <h4 class="gender-title">
+                            die · Giống cái
+                        </h4>
+
+                        ${renderWordItems(nouns.die)}
+                    </div>
+
+                    <div class="gender-column das">
+                        <h4 class="gender-title">
+                            das · Giống trung
+                        </h4>
+
+                        ${renderWordItems(nouns.das)}
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+
+    /**
+     * Hiển thị bảng động từ, tính từ hoặc từ khác.
+     */
+    function renderTableSection(title, words, columns) {
+        if (!words.length) {
+            return "";
+        }
+
+        return `
+            <section class="word-section">
+                <h3 class="section-heading">
+                    ${title}
+                </h3>
+
+                <div class="simple-table-wrap">
+                    <table class="word-table">
+                        <thead>
+                            <tr>
+                                ${columns.map(column => `
+                                    <th>${column.label}</th>
+                                `).join("")}
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            ${words.map(item => `
+                                <tr>
+                                    ${columns.map(column => `
+                                        <td>
+                                            ${item[column.key] || "—"}
+                                        </td>
+                                    `).join("")}
+                                </tr>
+                            `).join("")}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        `;
+    }
+
+    /**
+     * Mở modal của buổi học được chọn.
+     */
+    function openLesson(lessonId) {
+        const lesson = lessons.find(item => {
+            return item.id === lessonId;
+        });
+
+        if (!lesson) {
+            return;
+        }
+
+        modalDate.textContent =
+            `Buổi học ngày ${lesson.date}`;
+
+        modalTitle.textContent =
+            lesson.title;
+
+        modalContent.innerHTML = `
+            ${renderNouns(lesson.nouns)}
+
+            ${renderTableSection(
+                "Động từ (Verben)",
+                lesson.verbs,
+                [
+                    {
+                        key: "word",
+                        label: "Động từ"
+                    },
+                    {
+                        key: "meaning",
+                        label: "Nghĩa"
+                    },
+                    {
+                        key: "form",
+                        label: "Các dạng"
+                    },
+                    {
+                        key: "example",
+                        label: "Ví dụ"
+                    }
+                ]
+            )}
+
+            ${renderTableSection(
+                "Tính từ (Adjektive)",
+                lesson.adjectives,
+                [
+                    {
+                        key: "word",
+                        label: "Tính từ"
+                    },
+                    {
+                        key: "meaning",
+                        label: "Nghĩa"
+                    },
+                    {
+                        key: "example",
+                        label: "Ví dụ"
+                    }
+                ]
+            )}
+
+            ${renderTableSection(
+                "Từ và cụm từ khác",
+                lesson.others,
+                [
+                    {
+                        key: "word",
+                        label: "Từ / Cụm từ"
+                    },
+                    {
+                        key: "meaning",
+                        label: "Nghĩa"
+                    },
+                    {
+                        key: "example",
+                        label: "Ví dụ"
+                    }
+                ]
+            )}
+        `;
+
+        modal.showModal();
+    }
+
+    /**
+     * Mở modal khi bấm vào một buổi học.
+     */
+    lessonList.addEventListener("click", event => {
+        const card = event.target.closest(".lesson-card");
+
+        if (!card) {
+            return;
+        }
+
+        openLesson(card.dataset.lessonId);
+    });
+
+    /**
+     * Đóng bằng nút X.
+     */
+    closeModalButton.addEventListener("click", () => {
+        modal.close();
+    });
+
+    /**
+     * Đóng khi bấm vào vùng tối bên ngoài modal.
+     */
+    modal.addEventListener("click", event => {
+        if (event.target === modal) {
+            modal.close();
+        }
+    });
+
+    renderLessonCards();
 }
