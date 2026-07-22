@@ -4,6 +4,120 @@
  */
 window.lessonData = [
     {
+        id: "2026-07-22",
+        date: "22/07/2026",
+        title: "Essen und Wetter",
+        note: "Từ vựng về ăn uống và các cách miêu tả thời tiết.",
+
+        nouns: {
+            der: [],
+
+            die: [
+                {
+                    word: "die Sonne",
+                    meaning: "mặt trời",
+                    extra: "Số nhiều: die Sonnen"
+                }
+            ],
+
+            das: [
+                {
+                    word: "das Frühstück",
+                    meaning: "bữa sáng",
+                    extra: "Số nhiều: die Frühstücke"
+                },
+                {
+                    word: "das Mittagessen",
+                    meaning: "bữa trưa",
+                    extra: "Số nhiều không đổi: die Mittagessen"
+                },
+                {
+                    word: "das Abendessen",
+                    meaning: "bữa tối",
+                    extra: "Số nhiều không đổi: die Abendessen"
+                }
+            ]
+        },
+
+        verbs: [
+            {
+                word: "scheinen",
+                meaning: "chiếu sáng",
+                example: "Die Sonne scheint."
+            },
+            {
+                word: "schneien",
+                meaning: "tuyết rơi",
+                example: "Es schneit."
+            },
+            {
+                word: "regnen",
+                meaning: "mưa",
+                example: "Es regnet."
+            }
+        ],
+
+        adjectives: [
+            {
+                word: "vegetarisch",
+                meaning: "chay",
+                example: "Ich esse vegetarisch."
+            },
+            {
+                word: "vegan",
+                meaning: "thuần chay",
+                example: "Das Essen ist vegan."
+            },
+            {
+                word: "sonnig",
+                meaning: "có nắng",
+                example: "Es ist sonnig."
+            },
+            {
+                word: "bewölkt",
+                meaning: "nhiều mây",
+                example: "Es ist bewölkt."
+            },
+            {
+                word: "windig",
+                meaning: "có gió",
+                example: "Es ist windig."
+            },
+            {
+                word: "regnerisch",
+                meaning: "có mưa, nhiều mưa",
+                example: "Es ist regnerisch."
+            },
+            {
+                word: "kalt",
+                meaning: "lạnh",
+                example: "Es ist kalt."
+            },
+            {
+                word: "warm",
+                meaning: "ấm",
+                example: "Es ist warm."
+            },
+            {
+                word: "stürmisch",
+                meaning: "có gió bão",
+                example: "Es ist stürmisch."
+            },
+            {
+                word: "neblig",
+                meaning: "có sương mù",
+                example: "Es ist neblig."
+            },
+            {
+                word: "gewittrig",
+                meaning: "có giông, có sấm chớp",
+                example: "Es ist gewittrig."
+            }
+        ],
+
+        others: []
+    },
+    {
         id: "2026-07-20",
         date: "20/07/2026",
         title: "Frühstück",

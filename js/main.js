@@ -438,10 +438,6 @@ function initVocabularyPage() {
                         label: "Nghĩa"
                     },
                     {
-                        key: "form",
-                        label: "Các dạng"
-                    },
-                    {
                         key: "example",
                         label: "Ví dụ"
                     }
