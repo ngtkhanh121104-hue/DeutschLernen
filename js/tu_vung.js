@@ -4,6 +4,89 @@
  */
 window.lessonData = [
     {
+        id: "2026-07-23",
+        date: "23/07/2026",
+        title: "Tagesablauf",
+        note: "Từ vựng về các hoạt động hằng ngày.",
+
+        nouns: {
+            der: [],
+            die: [],
+            das: []
+        },
+
+        verbs: [
+            {
+                word: "duschen",
+                meaning: "tắm",
+                example: "Ich dusche am Morgen."
+            },
+            {
+                word: "frühstücken",
+                meaning: "ăn sáng",
+                example: "Ich frühstücke um sieben Uhr."
+            },
+            {
+                word: "schlafen",
+                meaning: "ngủ",
+                example: "Ich schlafe acht Stunden."
+            },
+            {
+                word: "treffen",
+                meaning: "gặp",
+                example: "Ich treffe meine Freunde am Nachmittag."
+            },
+            {
+                word: "lesen",
+                meaning: "đọc",
+                example: "Ich lese am Abend ein Buch."
+            },
+            {
+                word: "aufstehen",
+                meaning: "thức dậy",
+                example: "Ich stehe um sechs Uhr auf."
+            },
+            {
+                word: "aufräumen",
+                meaning: "dọn dẹp",
+                example: "Ich räume mein Zimmer auf."
+            },
+            {
+                word: "einkaufen",
+                meaning: "mua sắm",
+                example: "Ich kaufe am Nachmittag ein."
+            },
+            {
+                word: "anrufen",
+                meaning: "gọi điện",
+                example: "Ich rufe meine Mutter an."
+            },
+            {
+                word: "abholen",
+                meaning: "đón",
+                example: "Ich hole meinen Bruder von der Schule ab."
+            },
+            {
+                word: "fernsehen",
+                meaning: "xem tivi",
+                example: "Ich sehe am Abend fern."
+            },
+            {
+                word: "rausgehen",
+                meaning: "đi ra ngoài",
+                example: "Ich gehe am Wochenende raus."
+            },
+            {
+                word: "spazieren gehen",
+                meaning: "đi dạo",
+                example: "Ich gehe am Abend spazieren."
+            }
+        ],
+
+        adjectives: [],
+        others: []
+    },
+    {
         id: "2026-07-22",
         date: "22/07/2026",
         title: "Essen und Wetter",
