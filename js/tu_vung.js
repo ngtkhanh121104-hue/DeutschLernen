@@ -4,6 +4,131 @@
  */
 window.lessonData = [
     {
+        id: "2026-07-24",
+        date: "24/07/2026",
+        title: "Jahreszeiten und Monate",
+        note: "Từ vựng về bốn mùa, các tháng và nhiệt độ.",
+
+        nouns: {
+            der: [
+                // 4 mùa
+                {
+                    word: "der Frühling",
+                    meaning: "mùa xuân",
+                    extra: "Số nhiều: die Frühlinge"
+                },
+                {
+                    word: "der Sommer",
+                    meaning: "mùa hè",
+                    extra: "Số nhiều: die Sommer"
+                },
+                {
+                    word: "der Herbst",
+                    meaning: "mùa thu",
+                    extra: "Số nhiều: die Herbste"
+                },
+                {
+                    word: "der Winter",
+                    meaning: "mùa đông",
+                    extra: "Số nhiều: die Winter"
+                },
+
+                // 12 tháng
+                {
+                    word: "der Monat",
+                    meaning: "tháng",
+                    extra: "Số nhiều: die Monate"
+                },
+                {
+                    word: "der Januar",
+                    meaning: "tháng Một",
+                    extra: "Im Januar ist es kalt."
+                },
+                {
+                    word: "der Februar",
+                    meaning: "tháng Hai",
+                    extra: "Im Februar ist es oft kalt."
+                },
+                {
+                    word: "der März",
+                    meaning: "tháng Ba",
+                    extra: "Im März beginnt der Frühling."
+                },
+                {
+                    word: "der April",
+                    meaning: "tháng Tư",
+                    extra: "Im April regnet es oft."
+                },
+                {
+                    word: "der Mai",
+                    meaning: "tháng Năm",
+                    extra: "Im Mai ist es warm."
+                },
+                {
+                    word: "der Juni",
+                    meaning: "tháng Sáu",
+                    extra: "Im Juni beginnt der Sommer."
+                },
+                {
+                    word: "der Juli",
+                    meaning: "tháng Bảy",
+                    extra: "Im Juli ist es heiß."
+                },
+                {
+                    word: "der August",
+                    meaning: "tháng Tám",
+                    extra: "Im August ist es sonnig."
+                },
+                {
+                    word: "der September",
+                    meaning: "tháng Chín",
+                    extra: "Im September beginnt der Herbst."
+                },
+                {
+                    word: "der Oktober",
+                    meaning: "tháng Mười",
+                    extra: "Im Oktober ist es oft windig."
+                },
+                {
+                    word: "der November",
+                    meaning: "tháng Mười một",
+                    extra: "Im November ist es oft neblig."
+                },
+                {
+                    word: "der Dezember",
+                    meaning: "tháng Mười hai",
+                    extra: "Im Dezember beginnt der Winter."
+                },
+
+                // Nhiệt độ
+                {
+                    word: "der Grad",
+                    meaning: "độ, đơn vị đo nhiệt độ",
+                    extra: "Heute sind es 25 Grad."
+                }
+            ],
+
+            die: [
+                 {
+                    word: "die Jahreszeit",
+                    meaning: "mùa",
+                    extra: "Số nhiều: die Jahreszeiten"
+                },
+                {
+                    word: "die Temperatur",
+                    meaning: "nhiệt độ",
+                    extra: "Số nhiều: die Temperaturen"
+                }
+            ],
+
+            das: []
+        },
+
+        verbs: [],
+        adjectives: [],
+        others: []
+    },
+    {
         id: "2026-07-23",
         date: "23/07/2026",
         title: "Tagesablauf",
