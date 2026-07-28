@@ -1869,3 +1869,11 @@ table.data-table tr.flag-row:hover td {
     margin-top: 28px;
   }
 }
+/* Phần nguyên âm hoặc thân động từ bị biến đổi */
+.changed-part {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    color: #d7263d;
+    font-weight: 800;
+}

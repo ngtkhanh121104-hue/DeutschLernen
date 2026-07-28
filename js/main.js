@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initBackToTop();
     initAutoSidebar();
     initSidebarDrawer();
-
+    initVerbTables();
     if (typeof initActiveSidebarLink === "function") {
         initActiveSidebarLink();
     }
@@ -309,15 +309,14 @@ function initVocabularyPage() {
                             ${item.meaning}
                         </span>
 
-                        ${
-                            item.extra
-                                ? `
+                        ${item.extra
+                ? `
                                     <span class="word-extra">
                                         ${item.extra}
                                     </span>
                                 `
-                                : ""
-                        }
+                : ""
+            }
                     </li>
                 `).join("")}
             </ul>
@@ -426,61 +425,61 @@ function initVocabularyPage() {
             ${renderNouns(lesson.nouns)}
 
             ${renderTableSection(
-                "Động từ (Verben)",
-                lesson.verbs,
-                [
-                    {
-                        key: "word",
-                        label: "Động từ"
-                    },
-                    {
-                        key: "meaning",
-                        label: "Nghĩa"
-                    },
-                    {
-                        key: "example",
-                        label: "Ví dụ"
-                    }
-                ]
-            )}
+            "Động từ (Verben)",
+            lesson.verbs,
+            [
+                {
+                    key: "word",
+                    label: "Động từ"
+                },
+                {
+                    key: "meaning",
+                    label: "Nghĩa"
+                },
+                {
+                    key: "example",
+                    label: "Ví dụ"
+                }
+            ]
+        )}
 
             ${renderTableSection(
-                "Tính từ (Adjektive)",
-                lesson.adjectives,
-                [
-                    {
-                        key: "word",
-                        label: "Tính từ"
-                    },
-                    {
-                        key: "meaning",
-                        label: "Nghĩa"
-                    },
-                    {
-                        key: "example",
-                        label: "Ví dụ"
-                    }
-                ]
-            )}
+            "Tính từ (Adjektive)",
+            lesson.adjectives,
+            [
+                {
+                    key: "word",
+                    label: "Tính từ"
+                },
+                {
+                    key: "meaning",
+                    label: "Nghĩa"
+                },
+                {
+                    key: "example",
+                    label: "Ví dụ"
+                }
+            ]
+        )}
 
             ${renderTableSection(
-                "Từ và cụm từ khác",
-                lesson.others,
-                [
-                    {
-                        key: "word",
-                        label: "Từ / Cụm từ"
-                    },
-                    {
-                        key: "meaning",
-                        label: "Nghĩa"
-                    },
-                    {
-                        key: "example",
-                        label: "Ví dụ"
-                    }
-                ]
-            )}
+            "Từ và cụm từ khác",
+            lesson.others,
+            [
+                {
+                    key: "word",
+                    label: "Từ / Cụm từ"
+                },
+                {
+                    key: "meaning",
+                    label: "Nghĩa"
+                },
+                {
+                    key: "example",
+                    label: "Ví dụ"
+                }
+            ]
+        )}
         `;
 
         modal.showModal();
@@ -516,4 +515,224 @@ function initVocabularyPage() {
     });
 
     renderLessonCards();
+}
+/**
+ * Tạo các bảng chia động từ từ dữ liệu trong dong_tu.js.
+ * Hàm tự dừng trên những trang không có bảng động từ.
+ */
+function initVerbTables() {
+    const containers = document.querySelectorAll(
+        "[data-verb-category]"
+    );
+
+    const verbs = window.verbData;
+    const pronouns = window.verbPronouns;
+
+    if (
+        !containers.length ||
+        !Array.isArray(verbs) ||
+        !Array.isArray(pronouns)
+    ) {
+        return;
+    }
+
+    /**
+     * Chuyển ký tự đặc biệt thành dạng an toàn trước khi
+     * đưa dữ liệu vào HTML.
+     */
+    function escapeHtml(value) {
+        return String(value ?? "")
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
+    }
+
+    /**
+     * Hiển thị động từ tách và làm nổi bật tiền tố.
+     */
+    /**
+ * Tô đỏ phần bị biến đổi trong dạng chia động từ.
+ */
+    function highlightChangedPart(text, changedPart) {
+        const safeText = String(text ?? "");
+
+        if (!changedPart) {
+            return escapeHtml(safeText);
+        }
+
+        const changedIndex = safeText.indexOf(changedPart);
+
+        if (changedIndex === -1) {
+            return escapeHtml(safeText);
+        }
+
+        const beforeChanged = safeText.slice(0, changedIndex);
+
+        const afterChanged = safeText.slice(
+            changedIndex + changedPart.length
+        );
+
+        return (
+            escapeHtml(beforeChanged) +
+            `<span class="changed-part">${escapeHtml(changedPart)}</span>` +
+            escapeHtml(afterChanged)
+        );
+    }
+
+    /**
+     * Hiển thị dạng chia động từ.
+     * Tô đỏ phần biến đổi và làm nổi bật tiền tố động từ tách.
+     */
+    function formatVerbForm(verb, pronounKey) {
+        const form = verb.forms?.[pronounKey];
+
+        if (!form) {
+            return "—";
+        }
+
+        const changedPart =
+            verb.changedParts?.[pronounKey] || "";
+
+        /*
+         * Động từ không tách
+         */
+        if (!verb.separable || !verb.prefix) {
+            return highlightChangedPart(
+                form,
+                changedPart
+            );
+        }
+
+        /*
+         * Động từ tách
+         */
+        const marker = ` ... ${verb.prefix}`;
+
+        if (!form.endsWith(marker)) {
+            return highlightChangedPart(
+                form,
+                changedPart
+            );
+        }
+
+        const conjugatedPart = form.slice(
+            0,
+            form.length - marker.length
+        );
+
+        return `
+        ${highlightChangedPart(
+            conjugatedPart,
+            changedPart
+        )}
+
+        <span class="separable-gap">
+            ...
+        </span>
+
+        <span class="ending-alt">
+            ${escapeHtml(verb.prefix)}
+        </span>
+    `;
+    }
+
+    /**
+     * Tạo ghi chú về biến âm hoặc dạng bất quy tắc.
+     */
+    function renderFormNote(verb, pronounKey) {
+        const note = verb.notes?.[pronounKey];
+
+        if (!note) {
+            return "";
+        }
+
+        return `
+            <span class="qa-note">
+                (${escapeHtml(note)})
+            </span>
+        `;
+    }
+
+    /**
+     * Tạo một bảng chia động từ theo category.
+     */
+    function renderVerbTable(container) {
+        const category = container.dataset.verbCategory;
+
+        const categoryVerbs = verbs
+            .filter(verb => verb.category === category)
+            .sort((firstVerb, secondVerb) =>
+                firstVerb.infinitive.localeCompare(
+                    secondVerb.infinitive,
+                    "de"
+                )
+            );
+
+        if (!categoryVerbs.length) {
+            container.innerHTML = `
+                <p class="empty-text">
+                    Chưa có động từ trong nhóm này.
+                </p>
+            `;
+
+            return;
+        }
+
+        const headerCells = categoryVerbs
+            .map(verb => `
+                <th>
+                    ${escapeHtml(verb.infinitive)}
+
+                    <span class="sub">
+                        (${escapeHtml(verb.meaning)})
+                    </span>
+                </th>
+            `)
+            .join("");
+
+        const bodyRows = pronouns
+            .map(pronoun => {
+                const formCells = categoryVerbs
+                    .map(verb => `
+                        <td>
+                            <span class="verb-form">
+                                ${formatVerbForm(verb, pronoun.key)}
+                            </span>
+
+                            ${renderFormNote(verb, pronoun.key)}
+                        </td>
+                    `)
+                    .join("");
+
+                return `
+                    <tr>
+                        <td class="rowhead">
+                            ${escapeHtml(pronoun.label)}
+                        </td>
+
+                        ${formCells}
+                    </tr>
+                `;
+            })
+            .join("");
+
+        container.innerHTML = `
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Ngôi / Đại từ</th>
+                        ${headerCells}
+                    </tr>
+                </thead>
+
+                <tbody>
+                    ${bodyRows}
+                </tbody>
+            </table>
+        `;
+    }
+
+    containers.forEach(renderVerbTable);
 }

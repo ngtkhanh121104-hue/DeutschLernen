@@ -4,6 +4,88 @@
  */
 window.lessonData = [
     {
+        id: "2026-07-28",
+        date: "28/07/2026",
+        title: "Fähigkeiten und Freizeitaktivitäten",
+        note: "Từ vựng về khả năng, nghề nghiệp và các hoạt động trong thời gian rảnh.",
+
+        nouns: {
+            der: [
+                {
+                    word: "der Trainer",
+                    meaning: "huấn luyện viên",
+                    extra: "Số nhiều: die Trainer; giống cái: die Trainerin"
+                },
+                {
+                    word: "der Spieler",
+                    meaning: "cầu thủ, người chơi",
+                    extra: "Số nhiều: die Spieler; giống cái: die Spielerin"
+                }
+            ],
+
+            die: [],
+
+            das: []
+        },
+
+        verbs: [
+            {
+                word: "können",
+                meaning: "có thể, biết làm gì",
+                example: "Ich kann gut Fußball spielen."
+            },
+            {
+                word: "fotografieren",
+                meaning: "chụp ảnh",
+                example: "Ich fotografiere gern."
+            },
+            {
+                word: "Klavier spielen",
+                meaning: "chơi đàn piano",
+                example: "Sie kann sehr gut Klavier spielen."
+            },
+            {
+                word: "malen",
+                meaning: "vẽ, vẽ tranh",
+                example: "Das Kind malt ein Bild."
+            },
+            {
+                word: "nähen",
+                meaning: "may, khâu",
+                example: "Meine Mutter kann gut nähen."
+            },
+            {
+                word: "Rad fahren",
+                meaning: "đi xe đạp",
+                example: "Ich fahre jeden Tag Rad."
+            },
+            {
+                word: "rechnen",
+                meaning: "tính toán",
+                example: "Er kann sehr gut rechnen."
+            },
+            {
+                word: "Schach spielen",
+                meaning: "chơi cờ vua",
+                example: "Wir spielen am Wochenende Schach."
+            },
+            {
+                word: "schwimmen",
+                meaning: "bơi",
+                example: "Ich gehe zweimal pro Woche schwimmen."
+            },
+            {
+                word: "singen",
+                meaning: "hát",
+                example: "Sie kann sehr gut singen."
+            }
+        ],
+
+        adjectives: [],
+
+        others: []
+    },
+    {
         id: "2026-07-24",
         date: "24/07/2026",
         title: "Jahreszeiten und Monate",
@@ -109,7 +191,7 @@ window.lessonData = [
             ],
 
             die: [
-                 {
+                {
                     word: "die Jahreszeit",
                     meaning: "mùa",
                     extra: "Số nhiều: die Jahreszeiten"
