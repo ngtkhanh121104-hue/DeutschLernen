@@ -734,5 +734,243 @@ function initVerbTables() {
         `;
     }
 
+    /*
+ * Tạo các bảng Präsens.
+ */
     containers.forEach(renderVerbTable);
+
+    /*
+     * Tạo bảng Perfekt.
+     */
+    function renderPerfectTable() {
+        const container = document.getElementById(
+            "perfect-verb-table"
+        );
+
+        if (!container) {
+            return;
+        }
+
+        const perfectVerbs = verbs
+            .filter(verb => verb.perfect)
+            .sort((firstVerb, secondVerb) =>
+                firstVerb.infinitive.localeCompare(
+                    secondVerb.infinitive,
+                    "de"
+                )
+            );
+
+        if (!perfectVerbs.length) {
+            container.innerHTML = `
+                <p class="empty-text">
+                    Chưa có dữ liệu Perfekt.
+                </p>
+            `;
+
+            return;
+        }
+
+        const rows = perfectVerbs
+            .map((verb, index) => {
+                const perfectNote =
+                    verb.notes?.perfect || "";
+
+                const rowClass =
+                    index % 2 === 1
+                        ? ' class="flag-row"'
+                        : "";
+
+                return `
+                    <tr${rowClass}>
+                        <td class="rowhead">
+                            ${escapeHtml(verb.infinitive)}
+
+                            <span class="sub">
+                                (${escapeHtml(verb.meaning)})
+                            </span>
+                        </td>
+
+                        <td>
+                            <strong>
+                                ${escapeHtml(
+                    verb.perfect.auxiliary
+                )}
+                            </strong>
+                        </td>
+
+                        <td>
+                            <strong class="changed-part">
+                                ${escapeHtml(
+                    verb.perfect.participle
+                )}
+                            </strong>
+
+                            ${perfectNote
+                        ? `
+                                        <span class="qa-note">
+                                            ${escapeHtml(perfectNote)}
+                                        </span>
+                                    `
+                        : ""
+                    }
+                        </td>
+
+                        <td>
+                            ${escapeHtml(
+                        verb.perfect.example
+                    )}
+                        </td>
+                    </tr>
+                `;
+            })
+            .join("");
+
+        container.innerHTML = `
+            <table class="data-table perfect-table">
+                <thead>
+                    <tr>
+                        <th>Động từ</th>
+                        <th>Trợ động từ</th>
+                        <th>Partizip II</th>
+                        <th>Ví dụ</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    ${rows}
+                </tbody>
+            </table>
+        `;
+    }
+
+    /*
+     * Tạo bảng Präteritum.
+     */
+    function renderPreteriteTable() {
+        const tableContainer = document.getElementById(
+            "preterite-verb-table"
+        );
+
+        const exampleContainer = document.getElementById(
+            "preterite-examples"
+        );
+
+        if (!tableContainer) {
+            return;
+        }
+
+        const preteriteOrder = [
+            "haben",
+            "sein",
+            "können",
+            "wollen",
+            "mögen"
+        ];
+
+        const preteriteVerbs = preteriteOrder
+            .map(infinitive =>
+                verbs.find(verb =>
+                    verb.infinitive === infinitive &&
+                    verb.preterite
+                )
+            )
+            .filter(Boolean);
+
+        if (!preteriteVerbs.length) {
+            tableContainer.innerHTML = `
+                <p class="empty-text">
+                    Chưa có dữ liệu Präteritum.
+                </p>
+            `;
+
+            if (exampleContainer) {
+                exampleContainer.hidden = true;
+            }
+
+            return;
+        }
+
+        const headerCells = preteriteVerbs
+            .map(verb => `
+                <th>
+                    ${escapeHtml(verb.infinitive)}
+
+                    <span class="sub">
+                        (${escapeHtml(verb.meaning)})
+                    </span>
+                </th>
+            `)
+            .join("");
+
+        const bodyRows = pronouns
+            .map((pronoun, index) => {
+                const cells = preteriteVerbs
+                    .map(verb => `
+                        <td>
+                            <strong>
+                                ${escapeHtml(
+                        verb.preterite[
+                        pronoun.key
+                        ]
+                    )}
+                            </strong>
+                        </td>
+                    `)
+                    .join("");
+
+                const rowClass =
+                    index % 2 === 1
+                        ? ' class="flag-row"'
+                        : "";
+
+                return `
+                    <tr${rowClass}>
+                        <td class="rowhead">
+                            ${escapeHtml(pronoun.label)}
+                        </td>
+
+                        ${cells}
+                    </tr>
+                `;
+            })
+            .join("");
+
+        tableContainer.innerHTML = `
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Ngôi / Đại từ</th>
+                        ${headerCells}
+                    </tr>
+                </thead>
+
+                <tbody>
+                    ${bodyRows}
+                </tbody>
+            </table>
+        `;
+
+        if (exampleContainer) {
+            const examples = preteriteVerbs
+                .filter(verb => verb.preteriteExample)
+                .map(verb => `
+                    • <strong>
+                        ${escapeHtml(
+                    verb.preteriteExample
+                )}
+                    </strong><br>
+                `)
+                .join("<br>");
+
+            exampleContainer.innerHTML = `
+                <strong>Ví dụ:</strong><br><br>
+                ${examples}
+            `;
+
+            exampleContainer.hidden = !examples;
+        }
+    }
+
+    renderPerfectTable();
+    renderPreteriteTable();
 }

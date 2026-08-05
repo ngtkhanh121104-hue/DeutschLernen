@@ -1877,3 +1877,31 @@ table.data-table tr.flag-row:hover td {
     color: #d7263d;
     font-weight: 800;
 }
+/* Bảng Perfekt */
+.perfect-table th:nth-child(1),
+.perfect-table td:nth-child(1) {
+    min-width: 170px;
+}
+
+.perfect-table th:nth-child(2),
+.perfect-table td:nth-child(2) {
+    min-width: 120px;
+    text-align: center;
+}
+
+.perfect-table th:nth-child(3),
+.perfect-table td:nth-child(3) {
+    min-width: 170px;
+}
+
+.perfect-table th:nth-child(4),
+.perfect-table td:nth-child(4) {
+    min-width: 280px;
+}
+
+/* Ghi chú trong ô bảng */
+.data-table td .qa-note {
+    display: block;
+    margin-top: 5px;
+    line-height: 1.4;
+}
