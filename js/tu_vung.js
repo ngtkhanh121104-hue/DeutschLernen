@@ -4,6 +4,151 @@
  */
 window.lessonData = [
     {
+        id: "2026-08-11",
+        date: "11/08/2026",
+        title: "Orte in der Stadt und Wegbeschreibung",
+        note: "Từ vựng về các địa điểm trong thành phố, phương hướng và chỉ đường.",
+
+        nouns: {
+            der: [
+                {
+                    word: "der Bahnhof",
+                    meaning: "nhà ga",
+                    extra: "Số nhiều: die Bahnhöfe"
+                },
+                {
+                    word: "der Hafen",
+                    meaning: "bến cảng, cảng",
+                    extra: "Số nhiều: die Häfen"
+                }
+            ],
+
+            die: [
+                {
+                    word: "die Station",
+                    meaning: "ga, trạm",
+                    extra: "Số nhiều: die Stationen"
+                },
+                {
+                    word: "die Haltestelle",
+                    meaning: "trạm dừng",
+                    extra: "Số nhiều: die Haltestellen"
+                },
+                {
+                    word: "die Bibliothek",
+                    meaning: "thư viện",
+                    extra: "Số nhiều: die Bibliotheken"
+                },
+                {
+                    word: "die Disco",
+                    meaning: "sàn nhảy, vũ trường",
+                    extra: "Số nhiều: die Discos"
+                },
+                {
+                    word: "die Kirche",
+                    meaning: "nhà thờ",
+                    extra: "Số nhiều: die Kirchen"
+                },
+                {
+                    word: "die Bar",
+                    meaning: "quán bar",
+                    extra: "Số nhiều: die Bars"
+                },
+                {
+                    word: "die Kneipe",
+                    meaning: "quán rượu, quán bia nhỏ",
+                    extra: "Số nhiều: die Kneipen"
+                },
+                {
+                    word: "die Richtung",
+                    meaning: "phương hướng, hướng",
+                    extra: "Số nhiều: die Richtungen"
+                }
+            ],
+
+            das: [
+                {
+                    word: "das Schwimmbad",
+                    meaning: "bể bơi, hồ bơi",
+                    extra: "Số nhiều: die Schwimmbäder"
+                },
+                {
+                    word: "das Theater",
+                    meaning: "nhà hát",
+                    extra: "Số nhiều: die Theater"
+                },
+                {
+                    word: "das Café",
+                    meaning: "quán cà phê",
+                    extra: "Số nhiều: die Cafés"
+                },
+                {
+                    word: "das Museum",
+                    meaning: "bảo tàng",
+                    extra: "Số nhiều: die Museen"
+                },
+                {
+                    word: "das Restaurant",
+                    meaning: "nhà hàng",
+                    extra: "Số nhiều: die Restaurants"
+                },
+                {
+                    word: "das Kaufhaus",
+                    meaning: "trung tâm mua sắm, cửa hàng bách hóa",
+                    extra: "Số nhiều: die Kaufhäuser"
+                },
+                {
+                    word: "das Kino",
+                    meaning: "rạp chiếu phim",
+                    extra: "Số nhiều: die Kinos"
+                },
+                {
+                    word: "das Stadion",
+                    meaning: "sân vận động",
+                    extra: "Số nhiều: die Stadien"
+                }
+            ]
+        },
+
+        verbs: [
+            {
+                word: "aussteigen",
+                meaning: "xuống xe",
+                example: "Ich steige an der nächsten Haltestelle aus."
+            },
+            {
+                word: "erklären",
+                meaning: "giải thích, chỉ dẫn",
+                example: "Können Sie mir den Weg erklären?"
+            }
+        ],
+
+        adjectives: [],
+
+        others: [
+            {
+                word: "wohin",
+                meaning: "đi đâu, đến đâu",
+                example: "Wohin fährst du?"
+            },
+            {
+                word: "nach links",
+                meaning: "sang trái, về phía trái",
+                example: "Gehen Sie hier nach links."
+            },
+            {
+                word: "geradeaus",
+                meaning: "đi thẳng",
+                example: "Gehen Sie immer geradeaus."
+            },
+            {
+                word: "nach rechts",
+                meaning: "sang phải, về phía phải",
+                example: "Dann gehen Sie nach rechts."
+            }
+        ]
+    },
+    {
         id: "2026-07-28",
         date: "28/07/2026",
         title: "Fähigkeiten und Freizeitaktivitäten",

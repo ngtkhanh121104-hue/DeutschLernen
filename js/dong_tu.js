@@ -1129,6 +1129,320 @@ window.verbData.push(
     }
 );
 /*
+ * BỔ SUNG CÁC ĐỘNG TỪ MỚI
+ */
+const additionalVerbData = [
+    {
+        infinitive: "fliegen",
+        meaning: "bay, đi bằng máy bay",
+        category: "irregular",
+        separable: false,
+
+        forms: {
+            ich: "fliege",
+            du: "fliegst",
+            erSieEs: "fliegt",
+            wir: "fliegen",
+            ihr: "fliegt",
+            sieSie: "fliegen"
+        },
+
+        perfect: {
+            auxiliary: "sein",
+            participle: "geflogen",
+            example: "Wir sind nach Berlin geflogen."
+        },
+
+        changedParts: {},
+
+        notes: {
+            perfect: "Partizip II bất quy tắc: fliegen → geflogen."
+        }
+    },
+
+    {
+        infinitive: "gehen",
+        meaning: "đi",
+        category: "irregular",
+        separable: false,
+
+        forms: {
+            ich: "gehe",
+            du: "gehst",
+            erSieEs: "geht",
+            wir: "gehen",
+            ihr: "geht",
+            sieSie: "gehen"
+        },
+
+        perfect: {
+            auxiliary: "sein",
+            participle: "gegangen",
+            example: "Ich bin gestern ins Museum gegangen."
+        },
+
+        changedParts: {},
+
+        notes: {
+            perfect: "Partizip II bất quy tắc: gehen → gegangen."
+        }
+    },
+
+    {
+        infinitive: "hören",
+        meaning: "nghe",
+        category: "regular",
+        separable: false,
+
+        forms: {
+            ich: "höre",
+            du: "hörst",
+            erSieEs: "hört",
+            wir: "hören",
+            ihr: "hört",
+            sieSie: "hören"
+        },
+
+        perfect: {
+            auxiliary: "haben",
+            participle: "gehört",
+            example: "Ich habe gestern Musik gehört."
+        },
+
+        changedParts: {},
+        notes: {}
+    },
+
+    {
+        infinitive: "joggen",
+        meaning: "chạy bộ",
+        category: "regular",
+        separable: false,
+
+        forms: {
+            ich: "jogge",
+            du: "joggst",
+            erSieEs: "joggt",
+            wir: "joggen",
+            ihr: "joggt",
+            sieSie: "joggen"
+        },
+
+        perfect: {
+            auxiliary: "sein",
+            participle: "gejoggt",
+            example: "Ich bin gestern im Park gejoggt."
+        },
+
+        changedParts: {},
+
+        notes: {
+            perfect: "Trong bài A1 này, joggen tạo Perfekt với sein."
+        }
+    },
+
+    {
+        infinitive: "laufen",
+        meaning: "chạy, đi bộ",
+        category: "irregular",
+        separable: false,
+
+        forms: {
+            ich: "laufe",
+            du: "läufst",
+            erSieEs: "läuft",
+            wir: "laufen",
+            ihr: "lauft",
+            sieSie: "laufen"
+        },
+
+        perfect: {
+            auxiliary: "sein",
+            participle: "gelaufen",
+            example: "Ich bin eine Stunde im Park gelaufen."
+        },
+
+        changedParts: {
+            du: "äu",
+            erSieEs: "äu"
+        },
+
+        notes: {
+            du: "au → äu",
+            erSieEs: "au → äu",
+            perfect: "Partizip II bất quy tắc: laufen → gelaufen."
+        }
+    },
+
+    {
+        infinitive: "schlafen",
+        meaning: "ngủ",
+        category: "irregular",
+        separable: false,
+
+        forms: {
+            ich: "schlafe",
+            du: "schläfst",
+            erSieEs: "schläft",
+            wir: "schlafen",
+            ihr: "schlaft",
+            sieSie: "schlafen"
+        },
+
+        perfect: {
+            auxiliary: "haben",
+            participle: "geschlafen",
+            example: "Ich habe acht Stunden geschlafen."
+        },
+
+        changedParts: {
+            du: "ä",
+            erSieEs: "ä"
+        },
+
+        notes: {
+            du: "a → ä",
+            erSieEs: "a → ä",
+            perfect: "Partizip II: schlafen → geschlafen."
+        }
+    },
+
+    {
+        infinitive: "sehen",
+        meaning: "nhìn, xem",
+        category: "irregular",
+        separable: false,
+
+        forms: {
+            ich: "sehe",
+            du: "siehst",
+            erSieEs: "sieht",
+            wir: "sehen",
+            ihr: "seht",
+            sieSie: "sehen"
+        },
+
+        perfect: {
+            auxiliary: "haben",
+            participle: "gesehen",
+            example: "Ich habe gestern einen Film gesehen."
+        },
+
+        changedParts: {
+            du: "ie",
+            erSieEs: "ie"
+        },
+
+        notes: {
+            du: "e → ie",
+            erSieEs: "e → ie",
+            perfect: "Partizip II bất quy tắc: sehen → gesehen."
+        }
+    },
+
+    {
+        infinitive: "sterben",
+        meaning: "chết, qua đời",
+        category: "irregular",
+        separable: false,
+
+        forms: {
+            ich: "sterbe",
+            du: "stirbst",
+            erSieEs: "stirbt",
+            wir: "sterben",
+            ihr: "sterbt",
+            sieSie: "sterben"
+        },
+
+        perfect: {
+            auxiliary: "sein",
+            participle: "gestorben",
+            example: "Die Pflanze ist leider gestorben."
+        },
+
+        changedParts: {
+            du: "i",
+            erSieEs: "i"
+        },
+
+        notes: {
+            du: "e → i",
+            erSieEs: "e → i",
+            perfect: "Partizip II bất quy tắc: sterben → gestorben."
+        }
+    },
+
+    {
+        infinitive: "tanzen",
+        meaning: "nhảy, khiêu vũ",
+        category: "regular",
+        separable: false,
+
+        forms: {
+            ich: "tanze",
+            du: "tanzt",
+            erSieEs: "tanzt",
+            wir: "tanzen",
+            ihr: "tanzt",
+            sieSie: "tanzen"
+        },
+
+        perfect: {
+            auxiliary: "haben",
+            participle: "getanzt",
+            example: "Wir haben am Samstagabend getanzt."
+        },
+
+        changedParts: {},
+
+        notes: {
+            du: "Không thêm -st vì thân động từ kết thúc bằng z."
+        }
+    },
+
+    {
+        infinitive: "bohren",
+        meaning: "khoan",
+        category: "regular",
+        separable: false,
+
+        forms: {
+            ich: "bohre",
+            du: "bohrst",
+            erSieEs: "bohrt",
+            wir: "bohren",
+            ihr: "bohrt",
+            sieSie: "bohren"
+        },
+
+        perfect: {
+            auxiliary: "haben",
+            participle: "gebohrt",
+            example: "Er hat ein Loch in die Wand gebohrt."
+        },
+
+        changedParts: {},
+        notes: {}
+    }
+];
+
+/*
+ * Nếu động từ đã tồn tại thì cập nhật.
+ * Nếu chưa tồn tại thì thêm mới.
+ */
+additionalVerbData.forEach(newVerb => {
+    const existingIndex = window.verbData.findIndex(
+        verb => verb.infinitive === newVerb.infinitive
+    );
+
+    if (existingIndex >= 0) {
+        window.verbData[existingIndex] = newVerb;
+    } else {
+        window.verbData.push(newVerb);
+    }
+});
+/*
  * Sắp xếp toàn bộ động từ theo bảng chữ cái tiếng Đức.
  * Hàm hiển thị cũng có thể tự sắp xếp lại theo từng nhóm.
  */
