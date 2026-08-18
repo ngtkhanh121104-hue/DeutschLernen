@@ -787,19 +787,19 @@ window.verbData.push(
     },
 
     {
-        infinitive: "Klavier spielen",
-        meaning: "chơi đàn piano",
+        infinitive: "spielen",
+        meaning: "chơi",
         category: "regular",
         separable: false,
         verbPhrase: true,
 
         forms: {
-            ich: "spiele Klavier",
-            du: "spielst Klavier",
-            erSieEs: "spielt Klavier",
-            wir: "spielen Klavier",
-            ihr: "spielt Klavier",
-            sieSie: "spielen Klavier"
+            ich: "spiele",
+            du: "spielst",
+            erSieEs: "spielt",
+            wir: "spielen",
+            ihr: "spielt",
+            sieSie: "spielen"
         },
 
         perfect: {
@@ -867,19 +867,19 @@ window.verbData.push(
     },
 
     {
-        infinitive: "Rad fahren",
+        infinitive: "Fahren",
         meaning: "đi xe đạp",
         category: "irregular",
         separable: false,
         verbPhrase: true,
 
         forms: {
-            ich: "fahre Rad",
-            du: "fährst Rad",
-            erSieEs: "fährt Rad",
-            wir: "fahren Rad",
-            ihr: "fahrt Rad",
-            sieSie: "fahren Rad"
+            ich: "fahre",
+            du: "fährst",
+            erSieEs: "fährt",
+            wir: "fahren",
+            ihr: "fahrt",
+            sieSie: "fahren"
         },
 
         perfect: {
@@ -928,41 +928,10 @@ window.verbData.push(
 
         notes: {}
     },
-
-    {
-        infinitive: "Schach spielen",
-        meaning: "chơi cờ vua",
-        category: "regular",
-        separable: false,
-        verbPhrase: true,
-
-        forms: {
-            ich: "spiele Schach",
-            du: "spielst Schach",
-            erSieEs: "spielt Schach",
-            wir: "spielen Schach",
-            ihr: "spielt Schach",
-            sieSie: "spielen Schach"
-        },
-
-        perfect: {
-            auxiliary: "haben",
-            participle: "gespielt",
-            example: "Wir haben am Wochenende Schach gespielt."
-        },
-
-        changedParts: {},
-
-        notes: {
-            general:
-                "Đây là cụm gồm danh từ Schach và động từ spielen; chỉ spielen được chia."
-        }
-    },
-
     {
         infinitive: "schwimmen",
         meaning: "bơi",
-        category: "irregular",
+        category: "regular",
         separable: false,
 
         forms: {
@@ -993,7 +962,7 @@ window.verbData.push(
     {
         infinitive: "singen",
         meaning: "hát",
-        category: "irregular",
+        category: "regular",
         separable: false,
 
         forms: {
@@ -1135,7 +1104,7 @@ const additionalVerbData = [
     {
         infinitive: "fliegen",
         meaning: "bay, đi bằng máy bay",
-        category: "irregular",
+        category: "regular",
         separable: false,
 
         forms: {
@@ -1163,7 +1132,7 @@ const additionalVerbData = [
     {
         infinitive: "gehen",
         meaning: "đi",
-        category: "irregular",
+        category: "regular",
         separable: false,
 
         forms: {
@@ -1273,7 +1242,33 @@ const additionalVerbData = [
             perfect: "Partizip II bất quy tắc: laufen → gelaufen."
         }
     },
+    {
+        infinitive: "gefallen",
+        meaning: "thích, vừa ý",
+        category: "irregular",
+        separable: false,
 
+        forms: {
+            ich: "gefalle",
+            du: "gefällt",
+            erSieEs: "gefällst",
+            wir: "gefallen",
+            ihr: "gefallt",
+            sieSie: "gefallen"
+        },
+
+        perfect: {
+            auxiliary: "haben",
+            participle: "gefallen",
+            example: "Das Zimmer gefällt mir."
+        },
+
+        changedParts: {
+            du: "ä",
+            erSieEs: "ä"
+        },
+        notes: {}
+    },
     {
         infinitive: "schlafen",
         meaning: "ngủ",
@@ -1396,9 +1391,7 @@ const additionalVerbData = [
 
         changedParts: {},
 
-        notes: {
-            du: "Không thêm -st vì thân động từ kết thúc bằng z."
-        }
+        notes: {}
     },
 
     {

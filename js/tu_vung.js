@@ -4,6 +4,380 @@
  */
 window.lessonData = [
     {
+        id: "2026-08-18",
+        date: "18/08/2026",
+        title: "Ortsangaben und Wohnung",
+        note: "Vị trí đồ vật, đồ dùng trong nhà và cách hỏi cảm nhận",
+
+        nouns: {
+            der: [
+                {
+                    word: "Wasserhahn",
+                    meaning: "vòi nước",
+                    extra: "Plural: die Wasserhähne"
+                },
+                {
+                    word: "Teppich",
+                    meaning: "tấm thảm",
+                    extra: "Plural: die Teppiche"
+                },
+                {
+                    word: "Sessel",
+                    meaning: "ghế bành, ghế tựa",
+                    extra: "Plural: die Sessel"
+                }
+                
+            ],
+
+            die: [
+                {
+                    word: "Dusche",
+                    meaning: "vòi sen, phòng tắm vòi sen",
+                    extra: "Plural: die Duschen"
+                },
+                {
+                    word: "Couch",
+                    meaning: "ghế dài, ghế sofa",
+                    extra: "Plural: die Couches"
+                },
+                {
+                    word: "Badewanne",
+                    meaning: "bồn tắm",
+                    extra: "Plural: die Badewannen"
+                }
+                
+            ],
+
+            das: [
+                {
+                    word: "Bild",
+                    meaning: "bức tranh, bức ảnh",
+                    extra: "Plural: die Bilder"
+                }
+            ]
+        },
+
+        verbs: [
+            {
+                word: "gefallen",
+                meaning: "làm ai đó thích, hợp ý ai đó",
+                form: "gefällt / gefallen",
+                example: "Das Zimmer gefällt mir sehr gut."
+            }
+        ],
+
+        adjectives: [
+            {
+                word: "hell",
+                meaning: "sáng, rõ ràng",
+                example: "Das Zimmer ist hell."
+            },
+            {
+                word: "dunkel",
+                meaning: "tối, không sáng",
+                example: "Das Zimmer ist dunkel."
+            },
+            {
+                word: "sauber",
+                meaning: "sạch, gọn gàng",
+                example: "Das Sofa ist sauber."
+            },
+            {
+                word: "schmutzig",
+                meaning: "dơ, bẩn",
+                example: "Das Sofa ist schmutzig."
+            },
+            {
+                word: "neu",
+                meaning: "mới, chưa sử dụng",
+                example: "Der Stuhl ist neu."
+            },
+            {
+                word: "alt",
+                meaning: "cũ, đã sử dụng",
+                example: "Der Stuhl ist alt."
+            },
+            {
+                word: "schön",
+                meaning: "đẹp, hấp dẫn",
+                example: "Das Bett ist schön."
+            },
+            {
+                word: "hässlich",
+                meaning: "xấu, không hấp dẫn",
+                example: "Das Bett ist hässlich."
+            },
+            {
+                word: "groß",
+                meaning: "lớn",
+                example: "Der Tisch ist groß."
+            },
+            {
+                word: "klein",
+                meaning: "nhỏ",
+                example: "Der Stuhl ist klein."
+            },
+            {
+                word: "modern",
+                meaning: "hiện đại",
+                example: "Der Computer ist modern."
+            },
+            {
+                word: "unmodern",
+                meaning: "không hiện đại",
+                example: "Der Computer ist unmodern."
+            },
+            {
+                word: "gemütlich",
+                meaning: "thuận tiện, dễ chịu",
+                example: "Das Zimmer ist gemütlich."
+            },
+            {
+                word: "ungemütlich",
+                meaning: "không thuận tiện, không dễ chịu",
+                example: "Das Zimmer ist ungemütlich."
+            }
+         ],
+
+        others: [ ]
+    },
+
+    {
+        id: "2026-08-17",
+        date: "17/08/2026",
+        title: "Wohnen, Möbel und Miete",
+        note: "Nhà ở, đồ nội thất và các khoản tiền thuê nhà",
+
+        nouns: {
+            der: [
+                {
+                    word: "Mitbewohner",
+                    meaning: "bạn cùng phòng nam",
+                    extra: "Plural: die Mitbewohner"
+                },
+                {
+                    word: "Aufzug",
+                    meaning: "thang máy",
+                    extra: "Plural: die Aufzüge"
+                },
+                {
+                    word: "Lift",
+                    meaning: "thang máy",
+                    extra: "Plural: die Lifte"
+                },
+                {
+                    word: "Schrank",
+                    meaning: "cái tủ",
+                    extra: "Plural: die Schränke"
+                },
+                {
+                    word: "Balkon",
+                    meaning: "ban công",
+                    extra: "Plural: die Balkone"
+                },
+                {
+                    word: "Keller",
+                    meaning: "tầng hầm",
+                    extra: "Plural: die Keller"
+                },
+                {
+                    word: "Herd",
+                    meaning: "bếp nấu",
+                    extra: "Plural: die Herde"
+                },
+                {
+                    word: "Kühlschrank",
+                    meaning: "tủ lạnh",
+                    extra: "Plural: die Kühlschränke"
+                },
+                {
+                    word: "Ordner",
+                    meaning: "bìa hồ sơ, tập tài liệu",
+                    extra: "Plural: die Ordner"
+                }
+            ],
+
+            die: [
+                {
+                    word: "Mitbewohnerin",
+                    meaning: "bạn cùng phòng nữ",
+                    extra: "Plural: die Mitbewohnerinnen"
+                },
+                {
+                    word: "Küche",
+                    meaning: "nhà bếp",
+                    extra: "Plural: die Küchen"
+                },
+                {
+                    word: "Miete",
+                    meaning: "tiền thuê nhà",
+                    extra: "Plural: die Mieten"
+                },
+                {
+                    word: "Kaltmiete",
+                    meaning: "tiền thuê chưa bao gồm phụ phí",
+                    extra: "Plural: die Kaltmieten"
+                },
+                {
+                    word: "Warmmiete",
+                    meaning: "tổng tiền thuê đã bao gồm phụ phí",
+                    extra: "Plural: die Warmmieten"
+                },
+                {
+                    word: "Nebenkosten",
+                    meaning: "các phụ phí nhà ở",
+                    extra: "Chỉ dùng ở số nhiều"
+                },
+                {
+                    word: "Heizung",
+                    meaning: "hệ thống sưởi, lò sưởi",
+                    extra: "Plural: die Heizungen"
+                },
+                {
+                    word: "Spülmaschine",
+                    meaning: "máy rửa bát",
+                    extra: "Plural: die Spülmaschinen"
+                },
+                {
+                    word: "Waschmaschine",
+                    meaning: "máy giặt",
+                    extra: "Plural: die Waschmaschinen"
+                },
+                {
+                    word: "Mikrowelle",
+                    meaning: "lò vi sóng",
+                    extra: "Plural: die Mikrowellen"
+                },
+                {
+                    word: "Pflanze",
+                    meaning: "cây cảnh, cây cối",
+                    extra: "Plural: die Pflanzen"
+                },
+                {
+                    word: "Maus",
+                    meaning: "con chuột, chuột máy tính",
+                    extra: "Plural: die Mäuse"
+                },
+                {
+                    word: "Wand",
+                    meaning: "bức tường",
+                    extra: "Plural: die Wände"
+                },
+                {
+                    word: "Tastatur",
+                    meaning: "bàn phím",
+                    extra: "Plural: die Tastaturen"
+                },
+                {
+                    word: "Lampe",
+                    meaning: "cái đèn",
+                    extra: "Plural: die Lampen"
+                },
+                {
+                    word: "Steckdose",
+                    meaning: "ổ cắm điện",
+                    extra: "Plural: die Steckdosen"
+                }
+            ],
+
+            das: [
+                {
+                    word: "Zimmer",
+                    meaning: "căn phòng",
+                    extra: "Plural: die Zimmer"
+                },
+                {
+                    word: "Wohnzimmer",
+                    meaning: "phòng khách",
+                    extra: "Plural: die Wohnzimmer"
+                },
+                {
+                    word: "Schlafzimmer",
+                    meaning: "phòng ngủ",
+                    extra: "Plural: die Schlafzimmer"
+                },
+                {
+                    word: "Möbel",
+                    meaning: "món đồ nội thất",
+                    extra: "Plural: die Möbel"
+                },
+                {
+                    word: "Bett",
+                    meaning: "cái giường",
+                    extra: "Plural: die Betten"
+                },
+                {
+                    word: "Arbeitszimmer",
+                    meaning: "phòng làm việc",
+                    extra: "Plural: die Arbeitszimmer"
+                }
+            ]
+        },
+
+        verbs: [],
+
+        adjectives: [
+            {
+                word: "möbliert",
+                meaning: "có sẵn đồ nội thất",
+                example: "Das Zimmer ist möbliert."
+            },
+            {
+                word: "dringend",
+                meaning: "gấp, khẩn cấp",
+                example: "Ich suche dringend ein Zimmer."
+            }
+        ],
+
+       others: [
+            {
+                word: "an (+ Dativ)",
+                meaning: "ở sát, ở bên và có tiếp xúc",
+                example: "Das Bild hängt an der Wand."
+            },
+            {
+                word: "neben (+ Dativ)",
+                meaning: "ở bên cạnh",
+                example: "Die Maus ist neben dem Buch."
+            },
+            {
+                word: "auf (+ Dativ)",
+                meaning: "ở trên và có tiếp xúc",
+                example: "Das Handy ist auf dem Tisch."
+            },
+            {
+                word: "über (+ Dativ)",
+                meaning: "ở phía trên và không tiếp xúc",
+                example: "Das Bild hängt über dem Sofa."
+            },
+            {
+                word: "vor (+ Dativ)",
+                meaning: "ở phía trước",
+                example: "Der Stuhl steht vor dem Tisch."
+            },
+            {
+                word: "hinter (+ Dativ)",
+                meaning: "ở phía sau",
+                example: "Die Pflanze ist hinter dem Drucker."
+            },
+            {
+                word: "unter (+ Dativ)",
+                meaning: "ở phía dưới",
+                example: "Die Tasche ist unter dem Tisch."
+            },
+            {
+                word: "in (+ Dativ)",
+                meaning: "ở bên trong",
+                example: "Das Handy ist in der Tasche."
+            },
+            {
+                word: "zwischen (+ Dativ)",
+                meaning: "ở giữa",
+                example: "Der Sessel steht zwischen dem Tisch und dem Schrank."
+            }
+        ]
+    },
+    {
         id: "2026-08-11",
         date: "11/08/2026",
         title: "Orte in der Stadt und Wegbeschreibung",
