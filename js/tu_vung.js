@@ -4,6 +4,134 @@
  */
 window.lessonData = [
     {
+        id: "2026-08-19",
+        date: "19/8/2026",
+        title: "Preise, Materialien und Maße",
+        note: "Giá cả, chất liệu và kích thước",
+
+        nouns: {
+            der: [
+                {
+                    word: "der Preis",
+                    meaning: "giá cả",
+                    extra: "die Preise"
+                },
+                {
+                    word: "der Euro",
+                    meaning: "Euro, đồng Euro",
+                    extra: "€"
+                },
+                {
+                    word: "der Meter",
+                    meaning: "mét",
+                    extra: "m"
+                },
+                {
+                    word: "der Zentimeter",
+                    meaning: "centimét",
+                    extra: "cm"
+                },
+                {
+                    word: "der Schreibtisch",
+                    meaning: "bàn làm việc"
+                }
+            ],
+
+            die: [
+                {
+                    word: "die Länge",
+                    meaning: "chiều dài",
+                    extra: "lang = dài"
+                },
+                {
+                    word: "die Höhe",
+                    meaning: "chiều cao",
+                    extra: "hoch = cao"
+                },
+                {
+                    word: "die Breite",
+                    meaning: "chiều rộng",
+                    extra: "breit = rộng"
+                },
+                {
+                    word: "die Tiefe",
+                    meaning: "chiều sâu, chiều ngang",
+                    extra: "tief = sâu"
+                }
+            ],
+
+            das: [
+                {
+                    word: "das Metall",
+                    meaning: "kim loại"
+                },
+                {
+                    word: "das Holz",
+                    meaning: "gỗ"
+                },
+                {
+                    word: "das Leder",
+                    meaning: "da"
+                },
+                {
+                    word: "das Plastik",
+                    meaning: "nhựa"
+                },
+                {
+                    word: "das Material",
+                    meaning: "chất liệu, vật liệu"
+                }
+            ]
+        },
+
+        verbs: [],
+
+        adjectives: [
+            {
+                word: "günstig",
+                meaning: "rẻ, có giá tốt",
+                example: "Das Sofa ist günstig."
+            },
+            {
+                word: "kostenlos",
+                meaning: "miễn phí",
+                example: "Der Versand ist kostenlos."
+            },
+            {
+                word: "gratis",
+                meaning: "miễn phí",
+                example: "Das ist gratis."
+            },
+            {
+                word: "lang",
+                meaning: "dài",
+                example: "Der Tisch ist zwei Meter lang."
+            },
+            {
+                word: "hoch",
+                meaning: "cao",
+                example: "Der Schrank ist 190 cm hoch."
+            },
+            {
+                word: "breit",
+                meaning: "rộng",
+                example: "Das Bett ist 160 cm breit."
+            },
+            {
+                word: "tief",
+                meaning: "sâu",
+                example: "Der Schrank ist 50 cm tief."
+            },
+            {
+                word: "weiß",
+                meaning: "màu trắng",
+                example: "Der Schrank ist weiß."
+            }
+        ],
+
+        others: []
+    },
+    {
         id: "2026-08-18",
         date: "18/08/2026",
         title: "Ortsangaben und Wohnung",
@@ -26,7 +154,7 @@ window.lessonData = [
                     meaning: "ghế bành, ghế tựa",
                     extra: "Plural: die Sessel"
                 }
-                
+
             ],
 
             die: [
@@ -45,7 +173,7 @@ window.lessonData = [
                     meaning: "bồn tắm",
                     extra: "Plural: die Badewannen"
                 }
-                
+
             ],
 
             das: [
@@ -137,9 +265,9 @@ window.lessonData = [
                 meaning: "không thuận tiện, không dễ chịu",
                 example: "Das Zimmer ist ungemütlich."
             }
-         ],
+        ],
 
-        others: [ ]
+        others: []
     },
 
     {
@@ -329,7 +457,7 @@ window.lessonData = [
             }
         ],
 
-       others: [
+        others: [
             {
                 word: "an (+ Dativ)",
                 meaning: "ở sát, ở bên và có tiếp xúc",
