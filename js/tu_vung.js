@@ -4,6 +4,95 @@
  */
 window.lessonData = [
     {
+        id: "2026-08-20",
+        date: "20/08/2026",
+        title: "Formulare und Behörden",
+        note: "Từ vựng về mẫu đơn, giấy tờ và các cơ quan hành chính.",
+
+        nouns: {
+            der: [
+                {
+                    word: "der Antrag auf Kindergeld",
+                    meaning: "đơn xin trợ cấp trẻ em"
+                },
+                {
+                    word: "der Agentur für Arbeit",
+                    meaning: "cơ quan việc làm"
+                }
+            ],
+
+            die: [
+                {
+                    word: "die Anlage Kind",
+                    meaning: "phụ lục trẻ em"
+                },
+                {
+                    word: "die Familienkasse",
+                    meaning: "quỹ gia đình"
+                },
+                {
+                    word: "die Agentur für Arbeit",
+                    meaning: "cơ quan việc làm"
+                },
+                {
+                    word: "die Bundesagentur für Arbeit",
+                    meaning: "Cơ quan Việc làm Liên bang Đức"
+                }
+            ],
+
+            das: [
+                {
+                    word: "das Formular",
+                    meaning: "đơn biểu, mẫu đơn"
+                },
+                {
+                    word: "das Kindergeld",
+                    meaning: "trợ cấp trẻ em"
+                },
+                {
+                    word: "das Bürgerbüro",
+                    meaning: "văn phòng tiếp dân"
+                },
+                {
+                    word: "das Bürgeramt",
+                    meaning: "văn phòng hành chính công"
+                }
+            ]
+        },
+
+        verbs: [
+            {
+                word: "unterschreiben",
+                meaning: "ký tên",
+                example: "Ich unterschreibe das Formular."
+            },
+            {
+                word: "ausdrucken",
+                meaning: "in ra giấy",
+                example: "Ich drucke das Formular aus."
+            },
+            {
+                word: "schicken",
+                meaning: "gửi",
+                example: "Ich schicke das Formular."
+            },
+            {
+                word: "ausfüllen",
+                meaning: "điền vào",
+                example: "Ich fülle das Formular aus."
+            },
+            {
+                word: "müssen",
+                meaning: "phải",
+                example: "Ich muss das Formular ausfüllen."
+            }
+        ],
+
+        adjectives: [],
+
+        others: []
+    },
+    {
         id: "2026-08-19",
         date: "19/8/2026",
         title: "Preise, Materialien und Maße",

@@ -751,7 +751,74 @@ window.verbData.push(
             usage:
                 "Ở trình độ A1, nên dùng wollte để nói về mong muốn trong quá khứ."
         }
+    },
+    {
+        infinitive: "düften",
+        meaning: "được phép, có thể",
+        category: "modal",
+        separable: false,
+
+        forms: {
+            ich: "daft",
+            du: "dafst",
+            erSieEs: "daft",
+            wir: "düften",
+            ihr: "düft",
+            sieSie: "düften"
+        },
+
+        perfect: {
+            auxiliary: "haben",
+            participle: "geschlafen",
+            example: "Ich habe acht Stunden geschlafen."
+        },
+
+        changedParts: {
+            ich: "a",
+            du: "a",
+            erSieEs: "a"
+        },
+
+        notes: {
+            ich: "ü → a",
+            du: "ü → a",
+            erSieEs: "ü → a"
+        }
+    },
+    {
+        infinitive: "müssen",
+        meaning: "phải, cần thiết",
+        category: "modal",
+        separable: false,
+
+        forms: {
+            ich: "muss",
+            du: "musst",
+            erSieEs: "muss",
+            wir: "müssen",
+            ihr: "müsst",
+            sieSie: "müssen"
+        },
+
+        perfect: {
+            auxiliary: "haben",
+            participle: "geschlafen",
+            example: "Ich habe acht Stunden geschlafen."
+        },
+
+        changedParts: {
+            ich: "u",
+            du: "u",
+            erSieEs: "u"
+        },
+
+        notes: {
+            ich: "ü → u",
+            du: "ü → u",
+            erSieEs: "ü → u"
+        }
     }
+
 );
 /*
  * 5. CÁC ĐỘNG TỪ VÀ CỤM ĐỘNG TỪ HOẠT ĐỘNG
@@ -1301,7 +1368,6 @@ const additionalVerbData = [
             perfect: "Partizip II: schlafen → geschlafen."
         }
     },
-
     {
         infinitive: "sehen",
         meaning: "nhìn, xem",
