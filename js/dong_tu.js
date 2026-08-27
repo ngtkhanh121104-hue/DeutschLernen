@@ -767,11 +767,7 @@ window.verbData.push(
             sieSie: "düften"
         },
 
-        perfect: {
-            auxiliary: "haben",
-            participle: "geschlafen",
-            example: "Ich habe acht Stunden geschlafen."
-        },
+        perfect: {},
 
         changedParts: {
             ich: "a",
@@ -800,11 +796,7 @@ window.verbData.push(
             sieSie: "müssen"
         },
 
-        perfect: {
-            auxiliary: "haben",
-            participle: "geschlafen",
-            example: "Ich habe acht Stunden geschlafen."
-        },
+        perfect: {},
 
         changedParts: {
             ich: "u",
@@ -816,6 +808,31 @@ window.verbData.push(
             ich: "ü → u",
             du: "ü → u",
             erSieEs: "ü → u"
+        }
+    },
+    {
+        infinitive: "sollen",
+        meaning: "nên, cần thiết",
+        category: "modal",
+        separable: false,
+
+        forms: {
+            ich: "soll",
+            du: "sollst",
+            erSieEs: "soll",
+            wir: "sollen",
+            ihr: "sollt",
+            sieSie: "sollen"
+        },
+
+        perfect: {},
+
+        changedParts: {
+            ich: "ll",
+            erSieEs: "ll"
+        },
+
+        notes: {
         }
     }
 
@@ -1334,7 +1351,10 @@ const additionalVerbData = [
             du: "ä",
             erSieEs: "ä"
         },
-        notes: {}
+        notes: {
+            du: "a → ä",
+            erSieEs: "a → ä"
+        }
     },
     {
         infinitive: "schlafen",
@@ -1483,6 +1503,54 @@ const additionalVerbData = [
 
         changedParts: {},
         notes: {}
+    },
+    {
+        infinitive: "bleiben",
+        meaning: "ở lại, vẫn",
+        category: "regular",
+        separable: false,
+
+        forms: {
+            ich: "bleibe",
+            du: "bleibst",
+            erSieEs: "bleibt",
+            wir: "bleiben",
+            ihr: "bleibt",
+            sieSie: "bleiben"
+        },
+
+        perfect: {},
+
+        changedParts: {},
+
+        notes: {}
+    },
+    {
+        infinitive: "halten",
+        meaning: "giữ, giữ lại",
+        category: "irregular",
+        separable: false,
+
+        forms: {
+            ich: "halte",
+            du: "hältst",
+            erSieEs: "hält",
+            wir: "halten",
+            ihr: "haltet",
+            sieSie: "halten"
+        },
+
+        perfect: {},
+
+        changedParts: {
+            du: "ä",
+            erSieEs: "ä"
+        },
+
+        notes: {
+            du: "a → ä",
+            erSieEs: "a → ä"
+        }
     }
 ];
 

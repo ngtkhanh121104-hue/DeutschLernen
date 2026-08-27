@@ -4,6 +4,307 @@
  */
 window.lessonData = [
     {
+        id: "2026-08-26",
+        date: "26/08/2026",
+        title: "Gesundheit und Medikamente",
+        note: "Từ vựng về triệu chứng, thuốc và lời khuyên sức khỏe.",
+
+        nouns: {
+            der: [
+                {
+                    word: "der Rezept",
+                    meaning: "toa thuốc, đơn thuốc"
+                },
+                {
+                    word: "der Schnupfen",
+                    meaning: "cảm lạnh, sổ mũi"
+                },
+                {
+                    word: "der Husten",
+                    meaning: "ho"
+                }
+            ],
+
+            die: [
+                {
+                    word: "die Tablette",
+                    meaning: "viên thuốc"
+                },
+                {
+                    word: "die Nasentropfen",
+                    meaning: "thuốc nhỏ mũi"
+                },
+                {
+                    word: "die Schmerztablette",
+                    meaning: "thuốc giảm đau"
+                },
+                {
+                    word: "die Salbe",
+                    meaning: "thuốc bôi, mỡ bôi"
+                }
+            ],
+
+            das: [
+                {
+                    word: "das Rezept",
+                    meaning: "toa thuốc, đơn thuốc"
+                },
+                {
+                    word: "das Hustensaft",
+                    meaning: "siro ho"
+                }
+            ]
+        },
+
+        verbs: [
+            {
+                word: "bleiben",
+                meaning: "ở lại, vẫn",
+                example: "Bleiben Sie bitte ruhig!"
+            },
+            {
+                word: "halten",
+                meaning: "giữ, dừng",
+                example: "Halten Sie bitte an!"
+            },
+            {
+                word: "rufen",
+                meaning: "gọi",
+                example: "Rufen Sie bitte 112 an!"
+            },
+            {
+                word: "helfen",
+                meaning: "giúp đỡ",
+                example: "Nasentropfen helfen gegen Schnupfen."
+            }
+        ],
+
+        adjectives: [],
+
+        others: [
+            {
+                word: "gegen",
+                meaning: "chống lại, dùng để trị",
+                example: "Schmerztabletten helfen gegen Kopfschmerzen."
+            },
+            {
+                word: "Kopfschmerzen",
+                meaning: "đau đầu",
+                example: "Ich habe Kopfschmerzen."
+            }
+        ]
+    },
+    {
+        id: "2026-08-25",
+        date: "25/08/2026",
+        title: "Körperteile und Schmerzen",
+        note: "Từ vựng về các bộ phận cơ thể, đau và cảnh báo.",
+
+        nouns: {
+            der: [
+                {
+                    word: "der Kopf",
+                    meaning: "đầu"
+                },
+                {
+                    word: "der Mund",
+                    meaning: "miệng"
+                },
+                {
+                    word: "der Hals",
+                    meaning: "cổ, họng"
+                },
+                {
+                    word: "der Arm",
+                    meaning: "cánh tay"
+                },
+                {
+                    word: "der Rücken",
+                    meaning: "lưng"
+                },
+                {
+                    word: "der Fuß",
+                    meaning: "bàn chân"
+                },
+                {
+                    word: "der Radfahrer",
+                    meaning: "người đi xe đạp"
+                },
+                {
+                    word: "der Fußgänger",
+                    meaning: "người đi bộ"
+                },
+                {
+                    word: "der Unfall",
+                    meaning: "tai nạn"
+                },
+                {
+                    word: "der Schmerz",
+                    meaning: "cơn đau"
+                }
+            ],
+
+            die: [
+                {
+                    word: "die Nase",
+                    meaning: "mũi"
+                },
+                {
+                    word: "die Brust",
+                    meaning: "ngực"
+                },
+                {
+                    word: "die Schulter",
+                    meaning: "vai"
+                },
+                {
+                    word: "die Hand",
+                    meaning: "bàn tay"
+                }
+            ],
+
+            das: [
+                {
+                    word: "das Auge",
+                    meaning: "mắt"
+                },
+                {
+                    word: "das Ohr",
+                    meaning: "tai"
+                },
+                {
+                    word: "das Bein",
+                    meaning: "chân"
+                }
+            ]
+        },
+
+        verbs: [],
+
+        adjectives: [
+            {
+                word: "vorsichtig",
+                meaning: "cẩn thận",
+                example: "Seien Sie vorsichtig!"
+            }
+        ],
+
+        others: []
+    },
+    {
+        id: "2026-08-24",
+        date: "24/08/2026",
+        title: "E-Mail und Briefe",
+        note: "Từ vựng về thư điện tử, thư từ và cách viết thư.",
+
+        nouns: {
+            der: [
+                {
+                    word: "der Betreff",
+                    meaning: "tiêu đề (thư/email)"
+                },
+                {
+                    word: "der Ort",
+                    meaning: "nơi chốn, địa điểm"
+                },
+                {
+                    word: "der Gruß",
+                    meaning: "lời chào"
+                }
+            ],
+
+            die: [
+                {
+                    word: "die Anlage",
+                    meaning: "tệp đính kèm, phụ lục"
+                },
+                {
+                    word: "die Anrede",
+                    meaning: "lời chào đầu thư"
+                }
+            ],
+
+            das: [
+                {
+                    word: "das Datum",
+                    meaning: "ngày, ngày tháng"
+                }
+            ]
+        },
+
+        verbs: [
+            {
+                word: "baden",
+                meaning: "tắm bồn",
+                example: "Ich bade gern."
+            },
+            {
+                word: "im Internet surfen",
+                meaning: "lướt web",
+                example: "Ich surfe gern im Internet."
+            },
+            {
+                word: "grillen",
+                meaning: "nướng",
+                example: "Wir grillen am Wochenende."
+            },
+            {
+                word: "streichen",
+                meaning: "sơn, quét sơn",
+                example: "Ich streiche die Wand."
+            }
+        ],
+
+        adjectives: [
+            {
+                word: "formell",
+                meaning: "trang trọng",
+                example: "Die Anrede ist formell."
+            },
+            {
+                word: "informell",
+                meaning: "thân mật",
+                example: "Die Anrede ist informell."
+            }
+        ],
+
+        others: [
+            {
+                word: "Nö",
+                meaning: "không, cách nói thân mật của Nein",
+                example: "Nö, das möchte ich nicht."
+            },
+            {
+                word: "Sehr geehrter Herr Meyer",
+                meaning: "Kính gửi ông Meyer"
+            },
+            {
+                word: "Sehr geehrte Frau Meyer",
+                meaning: "Kính gửi bà Meyer"
+            },
+            {
+                word: "Sehr geehrte Damen und Herren",
+                meaning: "Kính gửi quý ông bà"
+            },
+            {
+                word: "Mit freundlichen Grüßen",
+                meaning: "Trân trọng"
+            },
+            {
+                word: "Viele Grüße",
+                meaning: "Thân ái, lời chào thân mật"
+            },
+            {
+                word: "Lieber Quan",
+                meaning: "Quan thân mến"
+            },
+            {
+                word: "Liebe Hang",
+                meaning: "Hang thân mến"
+            }
+        ]
+    },
+    {
         id: "2026-08-20",
         date: "20/08/2026",
         title: "Formulare und Behörden",
