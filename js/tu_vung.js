@@ -12,16 +12,16 @@ window.lessonData = [
         nouns: {
             der: [
                 {
-                    word: "der Rezept",
-                    meaning: "toa thuốc, đơn thuốc"
-                },
-                {
                     word: "der Schnupfen",
                     meaning: "cảm lạnh, sổ mũi"
                 },
                 {
                     word: "der Husten",
                     meaning: "ho"
+                },
+                {
+                    word: "der Hustensaft",
+                    meaning: "siro ho"
                 }
             ],
 
@@ -48,10 +48,6 @@ window.lessonData = [
                 {
                     word: "das Rezept",
                     meaning: "toa thuốc, đơn thuốc"
-                },
-                {
-                    word: "das Hustensaft",
-                    meaning: "siro ho"
                 }
             ]
         },

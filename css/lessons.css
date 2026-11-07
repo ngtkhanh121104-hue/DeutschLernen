@@ -1,0 +1,66 @@
+/* Giao diện trang bài học & danh sách bài (dùng token màu của style.css) */
+.breadcrumb { font-size: .85rem; color: var(--ink-soft); margin-bottom: 14px; }
+.breadcrumb a { color: var(--stamp-red); text-decoration: none; }
+.lesson-grid { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 1100px; margin: 0 auto; padding: 0 16px 40px; }
+@media (min-width: 640px) { .lesson-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .lesson-grid { grid-template-columns: repeat(4, 1fr); } }
+.lesson-card { display: flex; flex-direction: column; gap: 6px; padding: 16px; background: var(--paper-raised); border: 1px solid var(--line-strong); border-top: 4px solid var(--stamp-red); border-radius: var(--radius); color: var(--ink); text-decoration: none; transition: transform .15s, box-shadow .15s; }
+.lesson-card:hover, .lesson-card:focus-visible { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(27,42,50,.14); }
+.lesson-num { font-family: var(--f-display); color: var(--stamp-red); letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; }
+.lesson-de { margin: 0; font-family: var(--f-display); font-size: 1.15rem; color: var(--navy); }
+.lesson-vi { margin: 0; color: var(--ink-soft); font-style: italic; }
+.lesson-summary { margin: 4px 0 0; padding-left: 18px; font-size: .88rem; color: var(--ink-soft); }
+.lesson-parts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 10px; }
+.part-chip { font-size: .72rem; padding: 2px 8px; border: 1px solid var(--line-strong); border-radius: 99px; color: var(--ink-faint); }
+.part-chip.is-ready { color: var(--stamp-green); border-color: var(--stamp-green); background: var(--stamp-green-soft); }
+.level-hero { max-width: 1100px; margin: 0 auto; padding: 28px 16px 20px; }
+.home-levels { display: grid; gap: 16px; max-width: 1100px; margin: -20px auto 24px; padding: 0 16px; grid-template-columns: 1fr; position: relative; }
+@media (min-width: 700px) { .home-levels { grid-template-columns: 1fr 1fr; } }
+.level-card { display: block; padding: 22px; background: var(--navy); color: #fff; border-radius: var(--radius); text-decoration: none; border-left: 6px solid var(--stamp-red); }
+.level-card h2 { margin: 0 0 6px; font-family: var(--f-display); font-size: 1.6rem; }
+.level-card p { margin: 0 0 10px; opacity: .85; }
+.level-card span { font-weight: 600; }
+.tabs { display: flex; gap: 6px; overflow-x: auto; overflow-y: hidden; border-bottom: 2px solid var(--line-strong); margin: 18px 0; position: sticky; top: var(--header-h, 80px); z-index: 40; background: var(--paper); box-shadow: 0 6px 8px -6px rgba(27,42,50,.25); }
+.tab { flex: 1 0 auto; display: flex; flex-direction: column; align-items: center; padding: 10px 16px; background: none; border: 0; border-bottom: 3px solid transparent; margin-bottom: -2px; cursor: pointer; font: inherit; color: var(--ink-soft); }
+.tab span { font-family: var(--f-display); font-size: 1rem; letter-spacing: .04em; }
+.tab small { font-size: .75rem; color: var(--ink-faint); }
+.tab[aria-selected="true"] { color: var(--stamp-red); border-bottom-color: var(--stamp-red); }
+.tab:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+.empty-state { padding: 28px; text-align: center; background: var(--paper-raised); border: 1px dashed var(--line-strong); color: var(--ink-soft); }
+.lesson-text { color: var(--ink-soft); margin: 0 0 14px; }
+.example-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.example-list li { display: flex; flex-direction: column; padding: 8px 0; border-bottom: 1px dashed var(--line); }
+.example-list span { color: var(--ink-faint); font-size: .9rem; }
+.lesson-pager { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 28px 0 8px; }
+@media (min-width: 700px) { .lesson-pager { grid-template-columns: 1fr auto 1fr; align-items: center; } .lesson-pager a:last-child { text-align: right; } }
+.pager-link { padding: 10px 14px; border: 1px solid var(--line-strong); background: var(--paper-raised); color: var(--navy); text-decoration: none; border-radius: var(--radius); font-size: .9rem; }
+.pager-link:hover { border-color: var(--stamp-red); }
+
+/* Không viết hoa tự động trong bài học: tránh ß bị đổi thành SS (heißen → HEISSEN) */
+#lessonRoot .data-table th, #lessonRoot .note-box strong, #lessonRoot .data-table td { text-transform: none; }
+
+/* Tab luôn nằm dưới header khi cuộn; mục neo không bị che */
+#lessonRoot .section-card { scroll-margin-top: calc(var(--header-h, 80px) + 76px); }
+@media (max-width: 600px) { .tab { padding: 8px 10px; } .tab small { display: none; } }
+
+/* Bộ chuyển bài (sidebar): mũi tên - dropdown - mũi tên */
+.lesson-switcher { display: flex; align-items: stretch; gap: 8px; margin: 0 0 12px; }
+.switch-btn { flex: 0 0 44px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; line-height: 1; color: var(--navy); text-decoration: none; background: var(--paper); border: 1px solid var(--line-strong); border-radius: 8px; }
+a.switch-btn:hover, a.switch-btn:focus-visible { border-color: var(--stamp-red); color: var(--stamp-red); }
+.switch-btn.is-disabled { opacity: .35; cursor: not-allowed; }
+.lesson-select { position: relative; flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; justify-content: center; padding: 6px 30px 6px 12px; background: var(--paper); border: 1px solid var(--line-strong); border-radius: 8px; }
+.lesson-select small { font-size: .7rem; color: var(--ink-faint); letter-spacing: .04em; }
+.lesson-select::after { content: "⌄"; position: absolute; right: 11px; top: 50%; transform: translateY(-65%); font-size: 1.1rem; color: var(--navy); pointer-events: none; }
+.lesson-select select { appearance: none; -webkit-appearance: none; border: 0; background: transparent; font: inherit; font-weight: 600; color: var(--ink); width: 100%; padding: 0; margin: 0; text-overflow: ellipsis; cursor: pointer; }
+.lesson-select:focus-within { outline: 2px solid var(--navy); outline-offset: 1px; }
+
+/* Từ vựng */
+.word-list { display: flex; flex-direction: column; }
+.word-row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 2px 14px; padding: 9px 0; border-bottom: 1px dashed var(--line); }
+.word-row .w { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px; color: var(--ink); }
+.word-row .w small { color: var(--ink-faint); font-size: .8rem; }
+.word-row .m { color: var(--ink-soft); }
+.word-row .ex { grid-column: 1 / -1; margin: 2px 0 0; color: var(--ink-faint); font-size: .88rem; font-style: italic; }
+.gdot { flex: 0 0 auto; width: 9px; height: 9px; border-radius: 50%; display: inline-block; transform: translateY(-1px); }
+.g-der { background: #4a90d9; } .g-die { background: #c0396b; } .g-das { background: #6aa84f; } .g-pl { background: #e08a2e; }
+@media (max-width: 520px) { .word-row { grid-template-columns: 1fr; } }

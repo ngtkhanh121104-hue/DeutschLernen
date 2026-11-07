@@ -3,10 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initAutoSidebar();
     initSidebarDrawer();
     initVerbTables();
-    if (typeof initActiveSidebarLink === "function") {
-        initActiveSidebarLink();
-    }
-
     initVocabularyPage();
 });
 
@@ -44,6 +40,11 @@ function initBackToTop() {
  * Tự động tạo mục lục từ các section trong nội dung chính.
  */
 function initAutoSidebar() {
+    // Trang bài học tự dựng mục lục theo tab (lesson-page.js)
+    if (document.getElementById("lessonRoot")) {
+        return;
+    }
+
     const sidebar = document.getElementById("auto-sidebar");
 
     const sections = document.querySelectorAll(
@@ -57,9 +58,9 @@ function initAutoSidebar() {
     sidebar.innerHTML = "";
 
     sections.forEach((section, index) => {
-        const titleElement = section.querySelector(
-            ".section-title-vi"
-        );
+        const titleElement =
+            section.querySelector(".section-title-vi") ||
+            section.querySelector(".section-title-de");
 
         if (!titleElement) {
             return;
@@ -167,47 +168,10 @@ function initSidebarDrawer() {
     setSidebarOpen(false);
 }
 /**
- * Điều khiển sidebar theo kích thước màn hình.
- * Desktop: tự mở.
- * Mobile: mặc định đóng và tự đóng sau khi chọn mục.
- */
-function initResponsiveSidebar() {
-    const sidebarPanel = document.querySelector(".sidebar-panel");
-
-    if (!sidebarPanel) {
-        return;
-    }
-
-    const desktopMedia = window.matchMedia("(min-width: 861px)");
-
-    const updateSidebarState = event => {
-        if (event.matches) {
-            sidebarPanel.open = true;
-        } else {
-            sidebarPanel.open = false;
-        }
-    };
-
-    updateSidebarState(desktopMedia);
-
-    desktopMedia.addEventListener("change", updateSidebarState);
-
-    sidebarPanel.addEventListener("click", event => {
-        const clickedLink = event.target.closest(".sidebar-nav a");
-
-        if (!clickedLink || desktopMedia.matches) {
-            return;
-        }
-
-        sidebarPanel.open = false;
-    });
-}
-/**
  * Khởi tạo trang sổ tay từ vựng.
  * Hàm sẽ tự dừng nếu trang hiện tại không phải trang từ vựng.
  */
 function initVocabularyPage() {
-    console.log("Dữ liệu từ vựng:", window.lessonData);
     const lessonList = document.getElementById("lessonList");
     const modal = document.getElementById("vocabModal");
     const modalDate = document.getElementById("modalDate");
@@ -215,7 +179,8 @@ function initVocabularyPage() {
     const modalContent = document.getElementById("modalContent");
     const closeModalButton = document.getElementById("closeModal");
 
-    const lessons = window.lessonData;
+    // Sắp xếp buổi học mới nhất lên đầu theo id (YYYY-MM-DD)
+    const lessons = [...(window.lessonData || [])].sort((x, y) => y.id.localeCompare(x.id));
 
     if (
         !lessonList ||
@@ -974,3 +939,14 @@ function initVerbTables() {
     renderPerfectTable();
     renderPreteriteTable();
 }
+/* Đo chiều cao header (nếu đang dính) để sidebar và tab bám đúng vị trí */
+(function syncHeaderHeightGlobal() {
+    function sync() {
+        const h = document.querySelector(".site-header");
+        const sticky = h && getComputedStyle(h).position === "sticky";
+        document.documentElement.style.setProperty("--header-h", (sticky ? h.offsetHeight : 0) + "px");
+    }
+    window.addEventListener("load", sync);
+    window.addEventListener("resize", sync);
+    document.addEventListener("DOMContentLoaded", sync);
+})();

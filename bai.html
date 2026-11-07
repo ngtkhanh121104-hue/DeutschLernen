@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài học</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lessons.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-sidebar="yes">
+    <header class="site-header" id="site-header"></header>
+    <div class="shell">
+        <aside class="sidebar" id="page-sidebar" aria-label="Mục lục trang" aria-hidden="true">
+            <button class="sidebar-close" type="button" aria-label="Đóng mục lục">×</button>
+            <details class="sidebar-panel" open>
+                <summary class="sidebar-title">Mục trong bài</summary>
+                <nav class="sidebar-nav" id="auto-sidebar"></nav>
+            </details>
+        </aside>
+        <main class="content-main" id="lessonRoot"></main>
+    </div>
+    <button class="sidebar-overlay" type="button" aria-label="Đóng mục lục" tabindex="-1"></button>
+    <a href="#top" class="to-top" aria-label="Về đầu trang">↑</a>
+    <footer class="site-footer" id="site-footer"></footer>
+    <script src="data/lessons.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/lesson-page.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

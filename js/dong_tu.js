@@ -250,30 +250,6 @@ window.verbData.push(
         notes: {}
     },
 
-    {
-        infinitive: "spielen",
-        meaning: "chơi",
-        category: "regular",
-        separable: false,
-
-        forms: {
-            ich: "spiele",
-            du: "spielst",
-            erSieEs: "spielt",
-            wir: "spielen",
-            ihr: "spielt",
-            sieSie: "spielen"
-        },
-
-        perfect: {
-            auxiliary: "haben",
-            participle: "gespielt",
-            example: "Wir haben Fußball gespielt."
-        },
-
-        changedParts: {},
-        notes: {}
-    },
 
     {
         infinitive: "suchen",
@@ -753,18 +729,18 @@ window.verbData.push(
         }
     },
     {
-        infinitive: "düften",
+        infinitive: "dürfen",
         meaning: "được phép, có thể",
         category: "modal",
         separable: false,
 
         forms: {
-            ich: "daft",
-            du: "dafst",
-            erSieEs: "daft",
-            wir: "düften",
-            ihr: "düft",
-            sieSie: "düften"
+            ich: "darf",
+            du: "darfst",
+            erSieEs: "darf",
+            wir: "dürfen",
+            ihr: "dürft",
+            sieSie: "dürfen"
         },
 
         perfect: {},
@@ -779,6 +755,52 @@ window.verbData.push(
             ich: "ü → a",
             du: "ü → a",
             erSieEs: "ü → a"
+        }
+    },
+    {
+        infinitive: "mögen",
+        meaning: "thích",
+        category: "modal",
+        separable: false,
+
+        forms: {
+            ich: "mag",
+            du: "magst",
+            erSieEs: "mag",
+            wir: "mögen",
+            ihr: "mögt",
+            sieSie: "mögen"
+        },
+
+        preterite: {
+            ich: "mochte",
+            du: "mochtest",
+            erSieEs: "mochte",
+            wir: "mochten",
+            ihr: "mochtet",
+            sieSie: "mochten"
+        },
+
+        preteriteExample:
+            "Ich mochte als Kind Schokolade.",
+
+        perfect: {
+            auxiliary: "haben",
+            participle: "gemocht",
+            example: "Ich habe Fisch nie gemocht."
+        },
+
+        changedParts: {
+            ich: "a",
+            du: "a",
+            erSieEs: "a"
+        },
+
+        notes: {
+            ich: "ö → a",
+            du: "ö → a",
+            erSieEs: "ö → a",
+            general: "möchte (A1) là dạng Konjunktiv II của mögen, dùng để nói điều muốn."
         }
     },
     {
@@ -951,7 +973,7 @@ window.verbData.push(
     },
 
     {
-        infinitive: "Fahren",
+        infinitive: "fahren",
         meaning: "đi xe đạp",
         category: "irregular",
         separable: false,
