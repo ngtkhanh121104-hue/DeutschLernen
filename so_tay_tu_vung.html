@@ -4,14 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sổ tay ghi lại từ vựng tiếng Đức theo từng buổi học">
-    <title>Sổ tay từ vựng tiếng Đức</title>
+    <meta name="description" content="Từ vựng tiếng Đức A1–A2 theo từng Lektion">
+    <title>Wortschatz theo Lektion</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/theme.css">
+    <style>
+        .wort-bar { position: sticky; top: var(--header-h, 64px); z-index: 40; margin-bottom: 14px; padding: 10px 0 12px; background: rgba(245, 247, 251, .94); backdrop-filter: saturate(160%) blur(10px); border-bottom: 1px solid var(--line); }
+        .wort-search { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+        .level-divider, .lek { scroll-margin-top: calc(var(--header-h, 64px) + 130px); }
+        .wort-search label { display: block; position: relative; }
+        .wort-search input { width: 100%; padding: 14px 18px 14px 46px; font: inherit; font-size: 1.05rem; color: var(--ink); background: #fff; border: 1px solid var(--line-strong); border-radius: 14px; box-shadow: var(--shadow-sm); }
+        .wort-search input:focus { outline: 2px solid var(--stamp-red); outline-offset: 1px; }
+        .wort-search .ico { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); font-size: 1.1rem; pointer-events: none; }
+        .wort-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 10px; color: var(--ink-soft); font-size: .9rem; }
+        .wort-meta a { padding: 4px 14px; border: 1px solid var(--line-strong); border-radius: 999px; background: #fff; font-weight: 700; color: var(--ink-soft); }
+        .wort-meta a:hover { color: var(--stamp-red-ink); border-color: var(--stamp-red); }
+
+        .wort-main { width: min(1080px, calc(100% - 32px)); margin: 0 auto 54px; display: flex; flex-direction: column; gap: 22px; }
+
+        /* Đường kẻ ranh giới giữa A2 và A1 */
+        .level-divider { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+        .level-divider h2 { margin: 0; font-family: var(--f-display); font-size: 1.7rem; font-weight: 800; color: var(--ink); }
+        .level-divider span { color: var(--ink-faint); font-size: .9rem; }
+        .level-divider.is-boundary { position: relative; margin-top: 26px; padding-top: 26px; }
+        .level-divider.is-boundary::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; border-radius: 2px; background: var(--de-flag, var(--line-strong)); }
+
+        .empty-note { padding: 22px; text-align: center; color: var(--ink-soft); background: var(--paper-raised); border: 1px dashed var(--line-strong); border-radius: 14px; }
+
+        .wl-group { margin: 22px 0 8px; font-family: var(--f-display); font-size: 1.1rem; font-weight: 700; color: var(--ink); }
+        .wl-group:first-of-type { margin-top: 0; }
+        .wl-note { margin: 0 0 8px; }
+        .wl-list { display: flex; flex-direction: column; }
+        .wl-row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 2px 14px; padding: 9px 0; border-bottom: 1px dashed var(--line); }
+        .wl-w { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px; color: var(--ink); }
+        .wl-w small { color: var(--ink-faint); font-size: .8rem; }
+        .wl-m { color: var(--ink-soft); }
+        .wl-ex { grid-column: 1 / -1; margin: 2px 0 0; color: var(--ink-faint); font-size: .88rem; font-style: italic; }
+        .wl-tag { margin-left: auto; padding: 1px 8px; font-size: .72rem; font-weight: 700; border-radius: 999px; color: var(--stamp-red-ink); background: var(--stamp-red-soft); white-space: nowrap; }
+        .gdot { flex: 0 0 auto; width: 9px; height: 9px; border-radius: 50%; display: inline-block; transform: translateY(-1px); }
+        .g-der { background: #4a90d9; } .g-die { background: #c0396b; } .g-das { background: #6aa84f; } .g-pl { background: #e08a2e; }
+        /* Mỗi Lektion là một mục có thể mở rộng */
+        .lek { padding: 0; }
+        .lek > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 16px; padding: 18px 24px; border-radius: 16px; }
+        .lek > summary::-webkit-details-marker { display: none; }
+        .lek > summary:hover { background: var(--stamp-red-soft); }
+        .lek > summary::after { content: ""; flex: 0 0 auto; margin-left: auto; width: 10px; height: 10px; border-right: 2px solid var(--ink-faint); border-bottom: 2px solid var(--ink-faint); transform: rotate(45deg); transition: transform .2s ease; }
+        .lek[open] > summary { border-bottom: 1px solid var(--line); border-radius: 16px 16px 0 0; }
+        .lek[open] > summary::after { transform: rotate(-135deg); }
+        .lek .wl-list { padding: 8px 24px 18px; }
+        @media (max-width: 520px) { .lek > summary { padding: 14px 16px; gap: 12px; } .lek .wl-list { padding: 6px 16px 14px; } }
+        mark { background: #FFE58A; color: inherit; border-radius: 3px; padding: 0 1px; }
+        @media (max-width: 520px) { .wl-row { grid-template-columns: 1fr; } .level-divider h2 { font-size: 1.4rem; } }
+    </style>
 </head>
 
-<body class="vocab-page">
+<body class="vocab-page" data-nav="a2">
     <header class="site-header" id="top">
         <div class="header-inner">
             <a href="index.html" class="logo"><span class="flag">🇩🇪</span> DeutschLernen</a>
@@ -28,36 +76,35 @@
     </header>
 
     <header class="page-header">
-        <p class="eyebrow">Wortschatz · Lerntagebuch</p>
-        <h1>Sổ tay từ vựng</h1>
+        <p class="eyebrow">Wortschatz · Lektion</p>
+        <h1>Từ vựng theo bài</h1>
         <p class="subtitle">
-            Những từ mới được ghi lại sau mỗi buổi học. Chọn một ngày để mở nội dung chi tiết.
+            Từ vựng A2 hiển thị trước, tiếp đến là A1, sắp xếp theo từng Lektion. Dùng ô tìm kiếm để tra trong tất cả từ vựng.
         </p>
     </header>
 
-    <!-- Các thẻ ngày học sẽ được JavaScript tạo tại đây -->
-    <main id="lessonList" class="lesson-list" aria-label="Danh sách buổi học"></main>
+    <div class="wort-bar">
+    <div class="wort-search">
+        <label>
+            <span class="ico" aria-hidden="true">🔍</span>
+            <input id="wortSearch" type="search" placeholder="Tìm từ tiếng Đức, nghĩa tiếng Việt hoặc ví dụ…" autocomplete="off" aria-label="Tìm kiếm từ vựng">
+        </label>
+        <div class="wort-meta">
+            <span id="wortCount">Đang tải…</span>
+            <a href="#lv-A2">A2</a>
+            <a href="#lv-A1">A1</a>
+        </div>
+    </div>
+    </div>
+
+    <main id="wortRoot" class="wort-main" aria-label="Danh sách từ vựng"></main>
 
     <footer class="site-footer">
         <p>© 2026 Học Tiếng Đức A1 Miễn Phí. Viel Erfolg!</p>
     </footer>
 
-    <!-- Chỉ cần một modal, nội dung sẽ thay đổi theo ngày được chọn -->
-    <dialog id="vocabModal" class="vocab-modal" aria-labelledby="modalTitle">
-        <div class="modal-shell">
-            <header class="modal-header">
-                <div>
-                    <p id="modalDate" class="modal-date"></p>
-                    <h2 id="modalTitle" class="modal-title"></h2>
-                </div>
-                <button id="closeModal" class="close-modal" type="button" aria-label="Đóng">&times;</button>
-            </header>
-
-            <div id="modalContent" class="modal-content"></div>
-        </div>
-    </dialog>
-
-    <script src="js/tu_vung.js"></script>
-    <script src="js/main.js"></script>
+    <script src="data/lessons.js"></script>
+    <script src="js/wortschatz.js"></script>
 </body>
+
 </html>
