@@ -10,5 +10,5 @@
   const header = document.getElementById("site-header");
   if (header) header.innerHTML = `<div class="header-inner">${toggle}<a href="index.html" class="logo"><span class="flag">🇩🇪</span> DeutschLernen</a><nav class="site-nav">${nav}</nav></div><div class="stripe"></div>`;
   const footer = document.getElementById("site-footer");
-  if (footer) footer.innerHTML = "<p>© 2026 Học Tiếng Đức A1 Miễn Phí. Viel Erfolg!</p>";
+  if (footer) footer.innerHTML = "<p>Chúc bạn học tiếng Đức thật tốt và sớm chinh phục mục tiêu của mình! Viel Erfolg beim Deutschlernen und viel Spaß!</p>";
 })();

@@ -73,4 +73,4 @@ window.lessons = [
 window.lessons.forEach(l => { if (["a1-l01","a1-l02","a1-l03","a1-l04","a1-l05","a1-l06","a1-l07","a1-l08","a1-l09","a1-l10","a1-l11","a1-l12","a1-l13","a1-l14","a1-l15","a1-l16","a2-l01","a2-l02","a2-l03","a2-l04","a2-l05","a2-l06","a2-l07","a2-l08"].includes(l.id)) l.parts = { grammatik: true, kommunikation: true, woerter: false }; });
 
 // Bài đã có từ vựng (tab Wörter)
-window.lessons.forEach(l => { if (["a2-l01","a2-l02","a2-l03","a2-l04","a2-l05"].includes(l.id)) l.parts.woerter = true; });
+window.lessons.forEach(l => { if (["a2-l01","a2-l02","a2-l03","a2-l04","a2-l05","a2-l07","a2-l08"].includes(l.id)) l.parts.woerter = true; });
